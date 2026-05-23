@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-navy-900 antialiased;
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+  font-feature-settings: "cv11", "ss01";
+}
+
+::selection {
+  background: #cfeae8;
+  color: #0a1426;
+}
+
+/* Anchor offset for the sticky nav */
+section[id] {
+  scroll-margin-top: 84px;
+}
