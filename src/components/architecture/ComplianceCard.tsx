@@ -16,37 +16,25 @@ export function ComplianceCard({
   title,
   body,
   footer,
-  variant = "default",
 }: Props) {
-  const tint = variant === "tint";
   return (
-    <article
-      className={[
-        "flex h-full flex-col rounded-xl border p-6 transition",
-        tint
-          ? "border-brand-line bg-brand-tint/60"
-          : "border-brand-line bg-white",
-        "hover:border-brand-primary/60 hover:shadow-[0_2px_18px_-8px_rgba(32,97,171,0.25)]",
-      ].join(" ")}
-    >
+    <article className="flex h-full flex-col rounded-card border border-[rgba(32,97,171,0.18)] bg-white p-6 shadow-card transition hover:border-[#2488D0]/60">
       <div className="flex items-center gap-3">
         {Icon ? (
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-brand-navy text-white">
-            <Icon className="h-4 w-4" />
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[rgba(32,97,171,0.18)] text-[#2061AB]">
+            <Icon className="h-5 w-5" />
           </span>
         ) : null}
         {label ? (
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-deep">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2488D0]">
             {label}
           </p>
         ) : null}
       </div>
-      <h3 className="mt-4 text-base font-semibold text-brand-black">{title}</h3>
-      <div className="mt-2 text-sm leading-relaxed text-brand-black/80">
-        {body}
-      </div>
+      <h3 className="mt-4 text-[16px] font-semibold text-[#12317B]">{title}</h3>
+      <div className="mt-2 text-[14px] leading-[1.6] text-[#040404]">{body}</div>
       {footer ? (
-        <div className="mt-4 border-t border-brand-line/70 pt-3 text-xs leading-relaxed text-brand-deep">
+        <div className="mt-4 border-t border-[rgba(32,97,171,0.18)] pt-3 text-[12px] leading-[1.55] text-[#2061AB]">
           {footer}
         </div>
       ) : null}

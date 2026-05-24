@@ -19,21 +19,21 @@ export function MappingTable<R extends Record<string, unknown>>({
   caption,
 }: Props<R>) {
   return (
-    <div className="overflow-hidden rounded-xl border border-brand-line bg-white">
+    <div className="overflow-hidden rounded-card border border-[rgba(32,97,171,0.18)] bg-white shadow-card">
       {caption ? (
-        <p className="border-b border-brand-line bg-brand-soft px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-brand-deep">
+        <p className="border-b border-[rgba(18,49,123,0.16)] bg-white px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#2488D0]">
           {caption}
         </p>
       ) : null}
       <div className="overflow-x-auto">
         <table className="w-full min-w-[720px] border-collapse text-left text-sm">
           <thead>
-            <tr className="border-b border-brand-line bg-brand-soft">
+            <tr className="border-b border-[rgba(18,49,123,0.16)] bg-white">
               {columns.map((col) => (
                 <th
                   key={String(col.key)}
                   scope="col"
-                  className="px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-brand-deep"
+                  className="px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#12317B]"
                   style={col.width ? { width: col.width } : undefined}
                 >
                   {col.header}
@@ -45,15 +45,12 @@ export function MappingTable<R extends Record<string, unknown>>({
             {rows.map((row, idx) => (
               <tr
                 key={idx}
-                className={[
-                  "border-b border-brand-line/70 align-top last:border-b-0",
-                  idx % 2 === 0 ? "bg-white" : "bg-brand-soft/40",
-                ].join(" ")}
+                className="border-b border-[rgba(18,49,123,0.16)] align-top last:border-b-0"
               >
                 {columns.map((col) => (
                   <td
                     key={String(col.key)}
-                    className="px-4 py-3 text-xs leading-relaxed text-brand-black/85"
+                    className="px-4 py-3 text-[13px] leading-[1.55] text-[#040404]"
                   >
                     {col.render ? col.render(row) : String(row[col.key] ?? "")}
                   </td>

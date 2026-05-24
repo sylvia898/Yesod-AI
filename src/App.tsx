@@ -44,20 +44,20 @@ function NotFound() {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-3xl px-6 py-24 text-center">
-        <p className="text-xs font-semibold uppercase text-accent-600">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2488D0]">
           404
         </p>
-        <h1 className="mt-3 text-3xl font-semibold text-navy-900 sm:text-4xl">
+        <h1 className="mt-3 text-3xl font-semibold text-[#12317B] sm:text-4xl">
           Page not found
         </h1>
-        <p className="mt-4 text-base leading-relaxed text-navy-700">
+        <p className="mt-4 text-base leading-relaxed text-[#040404]">
           The page you are looking for does not exist. Return to the overview to continue.
         </p>
         <div className="mt-8">
           <Link
             to="/"
             exact
-            className="inline-flex items-center rounded-md bg-navy-900 px-4 py-2 text-sm font-medium text-white shadow-card transition hover:bg-navy-800"
+            className="inline-flex items-center rounded-md bg-[#12317B] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#0e276a]"
           >
             Back to overview
           </Link>
@@ -70,16 +70,14 @@ function NotFound() {
 export default function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-white text-navy-900">
+      <div className="min-h-screen bg-white text-[#040404]">
         <Nav />
         <main>
           <CurrentPage />
         </main>
-        <footer className="border-t border-navy-100 bg-white">
-          <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-8 text-xs text-navy-500 sm:flex-row sm:items-center sm:justify-between">
-            <p>
-              Yesod AI · Software Validation for AI Clinical Programming.
-            </p>
+        <footer className="border-t border-[rgba(32,97,171,0.18)] bg-white">
+          <div className="mx-auto flex max-w-[1200px] flex-col gap-2 px-6 py-8 text-xs text-[#040404]/70 sm:flex-row sm:items-center sm:justify-between">
+            <p>Yesod AI · Software Validation for AI Clinical Programming.</p>
             <p>&copy; {new Date().getFullYear()} Yesod AI.</p>
           </div>
         </footer>

@@ -5,8 +5,8 @@ import { SectionHeading } from "./SectionHeading";
 
 export function Scope() {
   return (
-    <section id="scope" className="bg-navy-50/60">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+    <section id="scope" className="bg-white">
+      <div className="mx-auto max-w-[1200px] px-6 py-24">
         <SectionHeading
           eyebrow="Tradeoffs & MVP scope"
           title="What to validate now, and what to defer without losing customer trust."
@@ -43,29 +43,35 @@ function Column({
   tone: "primary" | "muted";
   icon: ReactNode;
 }) {
-  const headerTone =
+  const headerBorder =
     tone === "primary"
-      ? "bg-navy-900 text-white"
-      : "bg-navy-100 text-navy-800";
+      ? "border-[#12317B]"
+      : "border-[#2488D0]";
+  const headerText =
+    tone === "primary" ? "text-[#12317B]" : "text-[#2488D0]";
+  const dotColor =
+    tone === "primary" ? "bg-[#12317B]" : "bg-[#2488D0]";
   return (
-    <article className="overflow-hidden rounded-lg border border-navy-100 bg-white shadow-card">
+    <article className="overflow-hidden rounded-card border border-[rgba(32,97,171,0.18)] bg-white shadow-card">
       <header
-        className={`flex items-center gap-3 px-6 py-4 ${headerTone}`}
+        className={`flex items-center gap-3 border-b-2 bg-white px-6 py-5 ${headerBorder}`}
       >
-        <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-white/15">
+        <span
+          className={`inline-flex h-9 w-9 items-center justify-center rounded-md border ${headerBorder} ${headerText}`}
+        >
           {icon}
         </span>
-        <h3 className="text-sm font-semibold uppercase">
+        <h3 className={`text-[14px] font-semibold uppercase tracking-[0.14em] ${headerText}`}>
           {title}
         </h3>
       </header>
-      <ul className="divide-y divide-navy-100">
+      <ul className="divide-y divide-[rgba(18,49,123,0.16)]">
         {items.map((i) => (
           <li
             key={i}
-            className="flex items-start gap-3 px-6 py-3 text-sm text-navy-800"
+            className="flex items-start gap-3 px-6 py-3 text-[14px] leading-[1.6] text-[#040404]"
           >
-            <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-accent-500" />
+            <span className={`mt-2 h-1.5 w-1.5 flex-none rounded-full ${dotColor}`} />
             {i}
           </li>
         ))}

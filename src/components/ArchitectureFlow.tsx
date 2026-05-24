@@ -35,9 +35,12 @@ import { RiskControlCard } from "./architecture/RiskControlCard";
 import { Timeline } from "./architecture/Timeline";
 import { TradeoffCard } from "./architecture/TradeoffCard";
 
+const SECTION = "border-b border-[rgba(32,97,171,0.18)] bg-white";
+const CONTAINER = "mx-auto max-w-[1200px] px-6 py-24";
+
 export function ArchitectureFlow() {
   return (
-    <div className="bg-white text-brand-black">
+    <div className="bg-white text-[#040404]">
       <HeroSection />
       <ComplianceStackSection />
       <ComplianceMappingSection />
@@ -57,26 +60,26 @@ export function ArchitectureFlow() {
 // ---------------------------------------------------------------
 function HeroSection() {
   return (
-    <section className="border-b border-brand-line bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+    <section className={SECTION}>
+      <div className={CONTAINER}>
         <div className="grid gap-12 lg:grid-cols-[1.45fr_1fr] lg:items-end">
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-brand-line bg-brand-tint px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-deep">
+            <p className="inline-flex items-center gap-2 rounded-full border border-[#2488D0] bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2488D0]">
               <ShieldCheck className="h-3.5 w-3.5" />
               Proposed Approach · Architecture
             </p>
-            <h1 className="mt-6 text-4xl font-semibold leading-[1.1] text-brand-black sm:text-5xl">
+            <h1 className="mt-6 text-[44px] font-semibold leading-[1.05] text-[#12317B] sm:text-[52px]">
               Compliance-by-Design Architecture
               <br />
-              <span className="text-brand-deep">for Enterprise AI SaaS</span>
+              <span className="text-[#2061AB]">for Enterprise AI SaaS</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-brand-black/80">
+            <p className="mt-6 max-w-2xl text-[17px] leading-[1.65] text-[#040404]">
               Enterprise pharma customers do not only buy AI capability; they buy
               trust, traceability, controlled data flow, and evidence that the
               platform can survive vendor assessment and future regulatory
               validation.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3 text-xs text-brand-deep">
+            <div className="mt-8 flex flex-wrap items-center gap-3 text-xs">
               <Anchor href="#stack">Compliance stack</Anchor>
               <Dot />
               <Anchor href="#diagram">Architecture diagram</Anchor>
@@ -111,7 +114,7 @@ function Anchor({ href, children }: { href: string; children: string }) {
   return (
     <a
       href={href}
-      className="font-medium uppercase tracking-[0.14em] text-brand-deep transition hover:text-brand-navy"
+      className="font-medium uppercase tracking-[0.14em] text-[#2488D0] transition hover:text-[#12317B]"
     >
       {children}
     </a>
@@ -119,7 +122,12 @@ function Anchor({ href, children }: { href: string; children: string }) {
 }
 
 function Dot() {
-  return <span className="h-1 w-1 rounded-full bg-brand-line" aria-hidden />;
+  return (
+    <span
+      className="h-1 w-1 rounded-full bg-[rgba(32,97,171,0.40)]"
+      aria-hidden
+    />
+  );
 }
 
 // ---------------------------------------------------------------
@@ -127,8 +135,8 @@ function Dot() {
 // ---------------------------------------------------------------
 function ComplianceStackSection() {
   return (
-    <section id="stack" className="border-b border-brand-line bg-brand-soft/60">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+    <section id="stack" className={SECTION}>
+      <div className={CONTAINER}>
         <ArchSectionHeader
           index="02"
           eyebrow="Compliance landscape"
@@ -140,39 +148,41 @@ function ComplianceStackSection() {
           {COMPLIANCE_LAYERS.map((layer, idx) => (
             <div
               key={layer.tier}
-              className="grid items-stretch gap-0 overflow-hidden rounded-xl border border-brand-line bg-white md:grid-cols-[200px_1fr_280px]"
+              className="grid items-stretch gap-0 overflow-hidden rounded-card border border-[rgba(32,97,171,0.18)] bg-white shadow-card md:grid-cols-[220px_1fr_300px]"
             >
-              <div className="flex flex-col justify-center gap-1 border-b border-brand-line bg-brand-navy px-5 py-5 text-white md:border-b-0 md:border-r">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/70">
+              <div className="flex flex-col justify-center gap-1 border-b border-[rgba(32,97,171,0.18)] bg-white px-5 py-5 md:border-b-0 md:border-r">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#2488D0]">
                   {layer.tier}
                 </p>
-                <p className="text-base font-semibold">{layer.title}</p>
-                <p className="text-[11px] text-white/70">
+                <p className="text-[18px] font-semibold leading-tight text-[#12317B]">
+                  {layer.title}
+                </p>
+                <p className="text-[11px] text-[#040404]/65">
                   Step {idx + 1} of {COMPLIANCE_LAYERS.length}
                 </p>
               </div>
 
-              <div className="border-b border-brand-line px-5 py-5 md:border-b-0 md:border-r">
+              <div className="border-b border-[rgba(32,97,171,0.18)] px-5 py-5 md:border-b-0 md:border-r">
                 <div className="flex flex-wrap gap-2">
                   {layer.frameworks.map((f) => (
                     <span
                       key={f}
-                      className="inline-flex items-center rounded-md border border-brand-line bg-brand-tint px-2.5 py-1 text-xs font-semibold text-brand-deep"
+                      className="inline-flex items-center rounded-md border border-[#2488D0] bg-white px-2.5 py-1 text-[12px] font-semibold text-[#2488D0]"
                     >
                       {f}
                     </span>
                   ))}
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-brand-black/85">
+                <p className="mt-3 text-[14px] leading-[1.6] text-[#040404]">
                   {layer.explanation}
                 </p>
               </div>
 
-              <div className="bg-brand-soft px-5 py-5">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-deep">
+              <div className="bg-white px-5 py-5">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#2488D0]">
                   Why buyers care
                 </p>
-                <p className="mt-1 text-xs leading-relaxed text-brand-black/85">
+                <p className="mt-1 text-[13px] leading-[1.55] text-[#040404]">
                   {layer.buyerSignal}
                 </p>
               </div>
@@ -180,7 +190,7 @@ function ComplianceStackSection() {
           ))}
         </div>
 
-        <p className="mt-6 max-w-3xl text-xs leading-relaxed text-brand-black/60">
+        <p className="mt-6 max-w-3xl text-[13px] leading-[1.55] text-[#040404]/75">
           A SOC 2 report does not unlock a regulated clinical workflow. A GxP
           binder does not pass an InfoSec questionnaire. Carrying both
           conversations is the work.
@@ -200,7 +210,7 @@ function ComplianceMappingSection() {
       header: "Framework / regulation",
       width: "16%",
       render: (r) => (
-        <span className="font-semibold text-brand-black">{r.framework}</span>
+        <span className="font-semibold text-[#12317B]">{r.framework}</span>
       ),
     },
     { key: "proves", header: "What it proves", width: "22%" },
@@ -215,8 +225,8 @@ function ComplianceMappingSection() {
   ];
 
   return (
-    <section className="border-b border-brand-line bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+    <section className={SECTION}>
+      <div className={CONTAINER}>
         <ArchSectionHeader
           index="03"
           eyebrow="Compliance → architecture mapping"
@@ -228,7 +238,7 @@ function ComplianceMappingSection() {
           <MappingTable rows={COMPLIANCE_MAPPING} columns={columns} />
         </div>
 
-        <div className="mt-6 flex flex-wrap items-center gap-3 text-[11px] text-brand-black/70">
+        <div className="mt-6 flex flex-wrap items-center gap-3 text-[12px] text-[#040404]/75">
           <LegendKey priority="MVP" />
           <LegendKey priority="MVP-ready" />
           <LegendKey priority="Later" />
@@ -241,14 +251,14 @@ function ComplianceMappingSection() {
 
 function PriorityBadge({ priority }: { priority: string }) {
   const config: Record<string, string> = {
-    MVP: "bg-brand-navy text-white border-brand-navy",
-    "MVP-ready": "bg-brand-tint text-brand-deep border-brand-line",
-    Later: "bg-white text-brand-black/70 border-brand-line",
-    "On trigger": "bg-white text-brand-deep border-dashed border-brand-line",
+    MVP: "border-[#12317B] text-[#12317B]",
+    "MVP-ready": "border-[#2061AB] text-[#2061AB]",
+    Later: "border-[#2488D0] text-[#2488D0]",
+    "On trigger": "border-dashed border-[#2488D0] text-[#2488D0]",
   };
   return (
     <span
-      className={`inline-flex items-center rounded-md border px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] ${
+      className={`inline-flex items-center rounded-md border bg-white px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] ${
         config[priority] ?? ""
       }`}
     >
@@ -261,7 +271,7 @@ function LegendKey({ priority }: { priority: string }) {
   return (
     <span className="inline-flex items-center gap-2">
       <PriorityBadge priority={priority} />
-      <span className="text-brand-black/65">{legendCopy[priority]}</span>
+      <span className="text-[#040404]/70">{legendCopy[priority]}</span>
     </span>
   );
 }
@@ -278,8 +288,8 @@ const legendCopy: Record<string, string> = {
 // ---------------------------------------------------------------
 function ArchitectureDiagramSection() {
   return (
-    <section id="diagram" className="border-b border-brand-line bg-brand-soft/60">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+    <section id="diagram" className={SECTION}>
+      <div className={CONTAINER}>
         <ArchSectionHeader
           index="04"
           eyebrow="Architecture diagram"
@@ -300,7 +310,7 @@ function ArchitectureDiagramSection() {
           ))}
         </div>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:grid-cols-3">
           <Caption
             icon={UserCheck}
             label="Inputs captured"
@@ -332,14 +342,14 @@ function Caption({
   body: string;
 }) {
   return (
-    <div className="rounded-xl border border-dashed border-brand-line bg-white p-5">
+    <div className="rounded-card border border-dashed border-[rgba(32,97,171,0.30)] bg-white p-5">
       <div className="flex items-center gap-2">
-        <Icon className="h-4 w-4 text-brand-deep" aria-hidden />
-        <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-deep">
+        <Icon className="h-4 w-4 text-[#2061AB]" aria-hidden />
+        <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#2488D0]">
           {label}
         </p>
       </div>
-      <p className="mt-2 text-xs leading-relaxed text-brand-black/80">{body}</p>
+      <p className="mt-2 text-[13px] leading-[1.55] text-[#040404]">{body}</p>
     </div>
   );
 }
@@ -349,8 +359,8 @@ function Caption({
 // ---------------------------------------------------------------
 function AiRiskSection() {
   return (
-    <section id="risk" className="border-b border-brand-line bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+    <section id="risk" className={SECTION}>
+      <div className={CONTAINER}>
         <ArchSectionHeader
           index="05"
           eyebrow="AI control plane"
@@ -370,10 +380,10 @@ function AiRiskSection() {
           ))}
         </div>
 
-        <div className="mt-8 flex flex-wrap items-start gap-3 rounded-xl border border-brand-line bg-brand-tint/50 p-5 text-xs leading-relaxed text-brand-black/85">
-          <AlertTriangle className="mt-0.5 h-4 w-4 flex-none text-brand-deep" aria-hidden />
+        <div className="mt-8 flex flex-wrap items-start gap-3 rounded-card border border-[rgba(32,97,171,0.18)] bg-white p-5 text-[13px] leading-[1.6] text-[#040404] shadow-card">
+          <AlertTriangle className="mt-0.5 h-4 w-4 flex-none text-[#2061AB]" aria-hidden />
           <p>
-            <span className="font-semibold text-brand-deep">
+            <span className="font-semibold text-[#12317B]">
               Why the second plane matters:
             </span>{" "}
             a SOC 2 audit will pass even if every prompt has been silently
@@ -391,8 +401,8 @@ function AiRiskSection() {
 // ---------------------------------------------------------------
 function DataFlowSection() {
   return (
-    <section className="border-b border-brand-line bg-brand-soft/60">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+    <section className={SECTION}>
+      <div className={CONTAINER}>
         <ArchSectionHeader
           index="06"
           eyebrow="Data flow"
@@ -403,32 +413,32 @@ function DataFlowSection() {
         <ol className="mt-10 grid gap-3 md:grid-cols-7">
           {DATA_FLOW.map((step, idx) => (
             <li key={step.step} className="relative flex h-full">
-              <article className="flex h-full w-full flex-col rounded-xl border border-brand-line bg-white p-4 transition hover:border-brand-primary/60">
+              <article className="flex h-full w-full flex-col rounded-card border border-[rgba(32,97,171,0.18)] bg-white p-4 shadow-card transition hover:border-[#2488D0]/60">
                 <div className="flex items-center justify-between">
-                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-brand-navy text-[11px] font-semibold text-white">
+                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-[#12317B] bg-white text-[11px] font-semibold text-[#12317B]">
                     {step.step}
                   </span>
                   {idx < DATA_FLOW.length - 1 ? (
                     <ArrowRight
-                      className="hidden h-4 w-4 text-brand-primary md:block"
+                      className="hidden h-4 w-4 text-[#2061AB] md:block"
                       aria-hidden
                     />
                   ) : null}
                 </div>
-                <h3 className="mt-3 text-[13px] font-semibold leading-tight text-brand-black">
+                <h3 className="mt-3 text-[13px] font-semibold leading-tight text-[#12317B]">
                   {step.title}
                 </h3>
-                <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-deep">
+                <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#2488D0]">
                   Logged
                 </p>
                 <ul className="mt-1 space-y-1">
                   {step.logged.map((l) => (
                     <li
                       key={l}
-                      className="flex items-start gap-1.5 text-[11px] leading-relaxed text-brand-black/80"
+                      className="flex items-start gap-1.5 text-[11px] leading-[1.55] text-[#040404]"
                     >
                       <span
-                        className="mt-1.5 h-1 w-1 flex-none rounded-full bg-brand-primary"
+                        className="mt-1.5 h-1 w-1 flex-none rounded-full bg-[#2488D0]"
                         aria-hidden
                       />
                       <span>{l}</span>
@@ -467,12 +477,12 @@ function NoteCard({
   body: string;
 }) {
   return (
-    <div className="rounded-xl border border-brand-line bg-white p-5">
+    <div className="rounded-card border border-[rgba(32,97,171,0.18)] bg-white p-5 shadow-card">
       <div className="flex items-center gap-2">
-        <Icon className="h-4 w-4 text-brand-deep" aria-hidden />
-        <p className="text-sm font-semibold text-brand-black">{title}</p>
+        <Icon className="h-4 w-4 text-[#2061AB]" aria-hidden />
+        <p className="text-[14px] font-semibold text-[#12317B]">{title}</p>
       </div>
-      <p className="mt-2 text-xs leading-relaxed text-brand-black/80">{body}</p>
+      <p className="mt-2 text-[13px] leading-[1.55] text-[#040404]">{body}</p>
     </div>
   );
 }
@@ -483,8 +493,8 @@ function NoteCard({
 function ScopeSection() {
   const icons = [CheckCircle2, Layers, Clock];
   return (
-    <section className="border-b border-brand-line bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+    <section className={SECTION}>
+      <div className={CONTAINER}>
         <ArchSectionHeader
           index="07"
           eyebrow="MVP vs. later scope"
@@ -502,48 +512,52 @@ function ScopeSection() {
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {SCOPE_COLUMNS.map((col, idx) => {
             const Icon = icons[idx];
-            const accent = idx === 0
-              ? "border-brand-navy"
-              : idx === 1
-              ? "border-brand-primary"
-              : "border-dashed border-brand-line";
-            const headerTone = idx === 0
-              ? "bg-brand-navy text-white"
-              : idx === 1
-              ? "bg-brand-tint text-brand-deep"
-              : "bg-brand-soft text-brand-black/70";
+            const accentBorder =
+              idx === 0
+                ? "border-[#12317B]"
+                : idx === 1
+                ? "border-[#2061AB]"
+                : "border-[#2488D0]";
+            const headerText =
+              idx === 0
+                ? "text-[#12317B]"
+                : idx === 1
+                ? "text-[#2061AB]"
+                : "text-[#2488D0]";
+            const dot =
+              idx === 0
+                ? "bg-[#12317B]"
+                : idx === 1
+                ? "bg-[#2061AB]"
+                : "bg-[#2488D0]";
             return (
               <article
                 key={col.label}
-                className={`flex h-full flex-col overflow-hidden rounded-xl border bg-white ${accent}`}
+                className={`flex h-full flex-col overflow-hidden rounded-card border-2 bg-white shadow-card ${accentBorder}`}
               >
-                <div className={`flex items-center justify-between px-5 py-3 ${headerTone}`}>
-                  <div className="flex items-center gap-2">
+                <div className="flex items-center justify-between border-b border-[rgba(32,97,171,0.18)] bg-white px-5 py-4">
+                  <div className={`flex items-center gap-2 ${headerText}`}>
                     <Icon className="h-4 w-4" aria-hidden />
-                    <p className="text-sm font-semibold">{col.label}</p>
+                    <p className="text-[14px] font-semibold">{col.label}</p>
                   </div>
-                  <span className="rounded-md border border-current/30 bg-white/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em]">
+                  <span
+                    className={`rounded-md border bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] ${accentBorder} ${headerText}`}
+                  >
                     {col.badge}
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col gap-4 px-5 py-5">
-                  <p className="text-xs leading-relaxed text-brand-black/75">
+                  <p className="text-[13px] leading-[1.55] text-[#040404]">
                     {col.intent}
                   </p>
                   <ul className="space-y-2">
                     {col.items.map((item) => (
                       <li
                         key={item}
-                        className="flex items-start gap-2 text-xs leading-relaxed text-brand-black/85"
+                        className="flex items-start gap-2 text-[13px] leading-[1.55] text-[#040404]"
                       >
                         <span
-                          className={`mt-1.5 h-1.5 w-1.5 flex-none rounded-full ${
-                            idx === 0
-                              ? "bg-brand-navy"
-                              : idx === 1
-                              ? "bg-brand-primary"
-                              : "bg-brand-line"
-                          }`}
+                          className={`mt-1.5 h-1.5 w-1.5 flex-none rounded-full ${dot}`}
                           aria-hidden
                         />
                         <span>{item}</span>
@@ -556,10 +570,10 @@ function ScopeSection() {
           })}
         </div>
 
-        <div className="mt-6 flex items-start gap-3 rounded-xl border-l-4 border-brand-primary bg-brand-tint/40 p-5">
-          <ClipboardCheck className="mt-0.5 h-4 w-4 flex-none text-brand-deep" aria-hidden />
-          <p className="text-sm leading-relaxed text-brand-black/85">
-            <span className="font-semibold text-brand-deep">Posture:</span>{" "}
+        <div className="mt-6 flex items-start gap-3 rounded-card border-l-4 border-[#2488D0] bg-white p-5 shadow-card">
+          <ClipboardCheck className="mt-0.5 h-4 w-4 flex-none text-[#2488D0]" aria-hidden />
+          <p className="text-[14px] leading-[1.6] text-[#040404]">
+            <span className="font-semibold text-[#12317B]">Posture:</span>{" "}
             “Yesod AI is designed for SOC 2, ISO 27001, HIPAA, GDPR, GxP, and
             21 CFR Part 11 readiness — certifications will be pursued on a
             customer-driven timeline.” Never claim a certification the company
@@ -576,8 +590,8 @@ function ScopeSection() {
 // ---------------------------------------------------------------
 function RoadmapSection() {
   return (
-    <section id="roadmap" className="border-b border-brand-line bg-brand-soft/60">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+    <section id="roadmap" className={SECTION}>
+      <div className={CONTAINER}>
         <ArchSectionHeader
           index="08"
           eyebrow="Roadmap"
@@ -598,8 +612,8 @@ function RoadmapSection() {
 // ---------------------------------------------------------------
 function TradeoffsSection() {
   return (
-    <section className="border-b border-brand-line bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+    <section className={SECTION}>
+      <div className={CONTAINER}>
         <ArchSectionHeader
           index="09"
           eyebrow="Tradeoffs & intentional omissions"
@@ -627,7 +641,7 @@ function NextStepSection() {
       header: "Control area",
       width: "16%",
       render: (r) => (
-        <span className="font-semibold text-brand-black">{r.controlArea}</span>
+        <span className="font-semibold text-[#12317B]">{r.controlArea}</span>
       ),
     },
     { key: "buyerConcern", header: "Buyer concern", width: "22%" },
@@ -649,26 +663,26 @@ function NextStepSection() {
 
   return (
     <section id="next" className="bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-20">
-        <div className="rounded-2xl border-2 border-brand-primary bg-white p-8 shadow-[0_2px_30px_-12px_rgba(32,97,171,0.35)]">
+      <div className={CONTAINER}>
+        <div className="rounded-card border-2 border-[#12317B] bg-white p-8 shadow-card">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-brand-primary text-white">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-md border-2 border-[#12317B] bg-white text-[#12317B]">
                 <ArrowRight className="h-4 w-4" />
               </span>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-deep">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2488D0]">
                 Final tactical next step
               </p>
             </div>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-line bg-brand-tint px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-deep">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#2488D0] bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#2488D0]">
               <Clock className="h-3 w-3" /> First thing tomorrow
             </span>
           </div>
 
-          <h2 className="mt-5 text-2xl font-semibold text-brand-black sm:text-3xl">
+          <h2 className="mt-5 text-[26px] font-semibold leading-tight text-[#12317B] sm:text-[32px]">
             Build the control-to-architecture matrix.
           </h2>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-brand-black/80">
+          <p className="mt-3 max-w-3xl text-[15px] leading-[1.65] text-[#040404]">
             One artifact, owned across Engineering, Security, ML, and
             Compliance. It is the single source of truth that connects every
             buyer concern to a product feature, an evidence artifact, a
@@ -712,12 +726,12 @@ function Outcome({
   body: string;
 }) {
   return (
-    <div className="rounded-xl border border-brand-line bg-brand-soft p-4">
+    <div className="rounded-card border border-[rgba(32,97,171,0.18)] bg-white p-4 shadow-card">
       <div className="flex items-center gap-2">
-        <Icon className="h-4 w-4 text-brand-deep" aria-hidden />
-        <p className="text-sm font-semibold text-brand-black">{title}</p>
+        <Icon className="h-4 w-4 text-[#2061AB]" aria-hidden />
+        <p className="text-[14px] font-semibold text-[#12317B]">{title}</p>
       </div>
-      <p className="mt-1 text-xs leading-relaxed text-brand-black/80">{body}</p>
+      <p className="mt-1 text-[12px] leading-[1.55] text-[#040404]">{body}</p>
     </div>
   );
 }

@@ -7,33 +7,29 @@ type Props = {
 
 export function RiskControlCard({ risk, why, control, index }: Props) {
   return (
-    <article className="flex h-full flex-col rounded-xl border border-brand-line bg-white p-5 transition hover:border-brand-primary/60 hover:shadow-[0_2px_18px_-8px_rgba(32,97,171,0.25)]">
+    <article className="flex h-full flex-col rounded-card border border-[rgba(32,97,171,0.18)] bg-white p-5 shadow-card transition hover:border-[#2488D0]/60">
       <div className="flex items-center justify-between">
-        <span className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-brand-line bg-brand-tint text-[11px] font-semibold text-brand-deep">
+        <span className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-[#2488D0] bg-white text-[11px] font-semibold text-[#2488D0]">
           {String(index).padStart(2, "0")}
         </span>
-        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-deep">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#2488D0]">
           AI risk
         </span>
       </div>
-      <h3 className="mt-3 text-base font-semibold text-brand-black">{risk}</h3>
+      <h3 className="mt-3 text-[15px] font-semibold text-[#12317B]">{risk}</h3>
 
       <div className="mt-3">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-black/60">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#2061AB]">
           Why it matters
         </p>
-        <p className="mt-1 text-xs leading-relaxed text-brand-black/80">
-          {why}
-        </p>
+        <p className="mt-1 text-[12px] leading-[1.55] text-[#040404]">{why}</p>
       </div>
 
-      <div className="mt-4 rounded-md border border-brand-line bg-brand-tint/60 p-3">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-deep">
+      <div className="mt-4 rounded-md border border-[rgba(32,97,171,0.18)] bg-white p-3">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#2488D0]">
           Early product control
         </p>
-        <p className="mt-1 text-xs leading-relaxed text-brand-black/85">
-          {control}
-        </p>
+        <p className="mt-1 text-[12px] leading-[1.55] text-[#040404]">{control}</p>
       </div>
     </article>
   );
