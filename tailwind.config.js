@@ -30,6 +30,15 @@ export default {
           800: "#0b4548",
           900: "#0c393c",
         },
+        brand: {
+          primary: "#2488D0",
+          deep: "#2061AB",
+          navy: "#12317B",
+          black: "#040404",
+          tint: "#EAF3FB",
+          line: "#CFE2F2",
+          soft: "#F4F8FC",
+        },
       },
       fontFamily: {
         sans: [
