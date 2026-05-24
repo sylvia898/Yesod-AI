@@ -19,26 +19,26 @@ import {
   Workflow,
 } from "lucide-react";
 
-export type NavLink = { id: string; label: string };
+export type NavLink = { path: string; label: string };
 
 export const NAV_LINKS: NavLink[] = [
-  { id: "overview", label: "Overview" },
-  { id: "problem", label: "Problem" },
-  { id: "why-yesod", label: "Why" },
-  { id: "iq-oq-pq", label: "IQ / OQ / PQ" },
-  { id: "gxp", label: "GxP" },
-  { id: "llm-risk", label: "LLM" },
-  { id: "drift", label: "Drift" },
-  { id: "package", label: "Package" },
-  { id: "architecture", label: "Arch" },
-  { id: "roadmap", label: "Roadmap" },
-  { id: "scope", label: "Scope" },
-  { id: "next-step", label: "Next" },
-  { id: "references", label: "Refs" },
+  { path: "/", label: "Overview" },
+  { path: "/problem", label: "Problem" },
+  { path: "/why", label: "Why" },
+  { path: "/iq-oq-pq", label: "IQ / OQ / PQ" },
+  { path: "/gxp", label: "GxP" },
+  { path: "/llm-risk", label: "LLM" },
+  { path: "/drift", label: "Drift" },
+  { path: "/package", label: "Package" },
+  { path: "/architecture", label: "Arch" },
+  { path: "/roadmap", label: "Roadmap" },
+  { path: "/scope", label: "Scope" },
+  { path: "/next-step", label: "Next" },
+  { path: "/references", label: "Refs" },
 ];
 
 export const HERO = {
-  eyebrow: "Yesod AI · Take-Home Research",
+  eyebrow: "Yesod AI · Validation Research",
   title: "Software Validation for AI Clinical Programming",
   subtitle:
     "GxP, IQ/OQ/PQ, audit evidence, and LLM drift management for a cloud-native AI SaaS platform.",
@@ -598,6 +598,548 @@ export const DEFER: string[] = [
 ];
 
 export type ReferenceItem = { title: string; note: string };
+
+// =============================================================
+// Architecture page data
+// =============================================================
+
+export type ArchSummaryCard = {
+  icon: LucideIcon;
+  label: string;
+  title: string;
+  body: string;
+};
+
+export const ARCH_SUMMARY: ArchSummaryCard[] = [
+  {
+    icon: ShieldCheck,
+    label: "Security baseline",
+    title: "SOC 2 / ISO 27001 readiness",
+    body: "Foundational controls — access, encryption, vendor risk, logging — designed to clear enterprise InfoSec review.",
+  },
+  {
+    icon: ClipboardCheck,
+    label: "Regulatory readiness",
+    title: "GxP & 21 CFR Part 11 support",
+    body: "Validated workflow primitives — traceability, change control, e-record integrity — ready for regulated phases.",
+  },
+  {
+    icon: Lock,
+    label: "Privacy posture",
+    title: "HIPAA / GDPR-aware data flow",
+    body: "Data is classified, minimized, and isolated per tenant; de-identified by default; auditable end-to-end.",
+  },
+];
+
+export type ComplianceLayer = {
+  tier: string;
+  title: string;
+  frameworks: string[];
+  explanation: string;
+  buyerSignal: string;
+};
+
+export const COMPLIANCE_LAYERS: ComplianceLayer[] = [
+  {
+    tier: "Layer 1",
+    title: "Enterprise security",
+    frameworks: ["SOC 2 Type I/II", "ISO 27001"],
+    explanation:
+      "Baseline trust controls every B2B SaaS vendor is expected to demonstrate before procurement will sign.",
+    buyerSignal:
+      "InfoSec reviewers gate the contract on these; without them, the conversation never reaches the science team.",
+  },
+  {
+    tier: "Layer 2",
+    title: "Life sciences readiness",
+    frameworks: ["GxP", "GCP", "GLP", "21 CFR Part 11"],
+    explanation:
+      "Evidence that the platform can support validated, audit-defensible workflows around regulated clinical activity.",
+    buyerSignal:
+      "Quality and regulatory teams gate adoption inside trials on this; SOC 2 alone does not prove fitness for GxP use.",
+  },
+  {
+    tier: "Layer 3",
+    title: "Privacy & data protection",
+    frameworks: ["HIPAA", "GDPR", "De-identified trial data"],
+    explanation:
+      "Controls around personal and health data — lawful basis, minimization, subject rights, and re-identification risk.",
+    buyerSignal:
+      "Privacy and legal teams gate cross-border and PHI workflows here; de-identification reduces — but does not erase — scope.",
+  },
+];
+
+export type MappingRow = {
+  framework: string;
+  proves: string;
+  capability: string;
+  priority: "MVP" | "MVP-ready" | "Later" | "On trigger";
+  evidence: string;
+};
+
+export const COMPLIANCE_MAPPING: MappingRow[] = [
+  {
+    framework: "SOC 2 Type I",
+    proves: "Design of security controls at a point in time.",
+    capability:
+      "Documented policies, access control design, vendor risk process, change management baseline.",
+    priority: "MVP-ready",
+    evidence: "Policy set, control narrative, access matrix, vendor list.",
+  },
+  {
+    framework: "SOC 2 Type II",
+    proves: "Operating effectiveness of controls across a 6–12 month window.",
+    capability:
+      "Continuous audit logs, access reviews, incident records, change management evidence.",
+    priority: "Later",
+    evidence:
+      "Audit log exports, quarterly access reviews, incident postmortems, change tickets.",
+  },
+  {
+    framework: "ISO 27001",
+    proves: "Formal Information Security Management System (ISMS).",
+    capability:
+      "Risk register, asset inventory, ISMS policies, internal audit program.",
+    priority: "Later",
+    evidence: "ISMS scope, Statement of Applicability, risk register, internal audit reports.",
+  },
+  {
+    framework: "GxP readiness",
+    proves: "Ability to support validated workflows in regulated clinical use.",
+    capability:
+      "Validation plan, requirements traceability, test evidence, controlled change process.",
+    priority: "MVP-ready",
+    evidence:
+      "Validation plan, URS/FRS, traceability matrix, IQ/OQ/PQ test results.",
+  },
+  {
+    framework: "21 CFR Part 11",
+    proves:
+      "Electronic records and signatures are trustworthy when the product is system-of-record.",
+    capability:
+      "Immutable audit trail, e-signature meaning, signer identity, timestamp, record retention.",
+    priority: "On trigger",
+    evidence:
+      "Audit trail spec, e-signature workflow, retention policy, identity proof linkage.",
+  },
+  {
+    framework: "HIPAA",
+    proves: "Safeguards when Protected Health Information is processed.",
+    capability:
+      "Access safeguards, encryption at rest/transit, audit logs, BAA readiness.",
+    priority: "MVP",
+    evidence:
+      "Encryption inventory, access logs, breach response plan, signed BAAs.",
+  },
+  {
+    framework: "GDPR",
+    proves: "Lawful and proportionate handling of EU personal data.",
+    capability:
+      "Data minimization, DPA support, deletion/export workflow, lawful basis records.",
+    priority: "MVP",
+    evidence:
+      "Data map, DPA template, DSAR runbook, lawful basis register.",
+  },
+  {
+    framework: "De-identified clinical data",
+    proves: "Reduced — but not zero — privacy risk for trial datasets.",
+    capability:
+      "De-identification assumptions, re-identification risk controls, contractual boundaries.",
+    priority: "MVP",
+    evidence:
+      "De-id method statement, risk assessment, MSA/DPA clauses, customer scope letter.",
+  },
+];
+
+export type ArchLayerCard = {
+  step: number;
+  title: string;
+  capabilities: string[];
+  complianceReason: string;
+};
+
+export const ARCH_LAYERS: ArchLayerCard[] = [
+  {
+    step: 0,
+    title: "Enterprise user · Pharma admin",
+    capabilities: ["Programmer", "Reviewer", "QA / Compliance", "Tenant admin"],
+    complianceReason:
+      "Defined personas anchor SoD and least-privilege design from day one.",
+  },
+  {
+    step: 1,
+    title: "Identity & access layer",
+    capabilities: [
+      "SSO · SAML / OIDC",
+      "MFA enforcement",
+      "RBAC + ABAC",
+      "Tenant-aware permissions",
+    ],
+    complianceReason:
+      "RBAC + SSO supports SOC 2 access control criteria and Part 11 user identity requirements.",
+  },
+  {
+    step: 2,
+    title: "Application & policy layer",
+    capabilities: [
+      "API gateway",
+      "Policy enforcement point",
+      "Tenant isolation",
+      "Rate limits & admin controls",
+    ],
+    complianceReason:
+      "Centralized policy enforcement is the chokepoint auditors look for to verify tenant separation.",
+  },
+  {
+    step: 3,
+    title: "AI workflow layer",
+    capabilities: [
+      "Workflow orchestration",
+      "Prompt templates",
+      "Human review queue",
+      "Approval gates",
+    ],
+    complianceReason:
+      "Explicit review and approval gates are how regulated outputs stay defensible under GxP scrutiny.",
+  },
+  {
+    step: 4,
+    title: "Model governance layer",
+    capabilities: [
+      "Model gateway",
+      "Model / provider version tracking",
+      "Prompt version tracking",
+      "Output traceability & rollback",
+    ],
+    complianceReason:
+      "Version pinning + rollback reduces AI drift risk and makes outputs reproducible months later.",
+  },
+  {
+    step: 5,
+    title: "Data layer",
+    capabilities: [
+      "Encrypted relational DB",
+      "Encrypted object storage",
+      "Tenant-isolated vector store",
+      "Secrets management & retention",
+    ],
+    complianceReason:
+      "Encryption + tenant isolation is the technical proof behind HIPAA, GDPR, and SOC 2 confidentiality claims.",
+  },
+  {
+    step: 6,
+    title: "Evidence & monitoring layer",
+    capabilities: [
+      "Immutable audit logs",
+      "Access monitoring",
+      "Change logs",
+      "Compliance evidence export · alerting",
+    ],
+    complianceReason:
+      "An independent evidence store is what survives vendor assessment and regulated traceability requests.",
+  },
+];
+
+export type AiRisk = {
+  risk: string;
+  why: string;
+  control: string;
+};
+
+export const AI_RISKS: AiRisk[] = [
+  {
+    risk: "Prompt drift",
+    why: "Edits to a prompt template silently change validated behavior.",
+    control: "Prompt versioning, code review, golden-test gate on every change.",
+  },
+  {
+    risk: "Model drift",
+    why: "Providers deprecate or upgrade models; outputs shift on the same input.",
+    control: "Model gateway with pinned versions, provider event log, rollback policy.",
+  },
+  {
+    risk: "Data leakage",
+    why: "PHI / PII can flow into prompts, logs, or vector stores unintentionally.",
+    control: "PHI/PII redaction, per-tenant isolation, data minimization at ingest.",
+  },
+  {
+    risk: "Hallucinated output",
+    why: "Plausible but unsupported values reach a regulated deliverable.",
+    control: "Human review gate, confidence flags, source references on every claim.",
+  },
+  {
+    risk: "Non-reproducible result",
+    why: "Auditor asks 'rerun this from 6 months ago' and the context is gone.",
+    control: "Snapshot inputs, prompt version, model version, and output hash per run.",
+  },
+];
+
+export type DataFlowStep = {
+  step: number;
+  title: string;
+  logged: string[];
+};
+
+export const DATA_FLOW: DataFlowStep[] = [
+  {
+    step: 1,
+    title: "Customer dataset",
+    logged: ["User ID", "Tenant ID", "Input dataset reference", "Timestamp"],
+  },
+  {
+    step: 2,
+    title: "Classification & redaction",
+    logged: ["PHI / PII classification", "Redaction policy version", "Timestamp"],
+  },
+  {
+    step: 3,
+    title: "Tenant workspace",
+    logged: ["Tenant ID", "Workspace ID", "Access path", "Timestamp"],
+  },
+  {
+    step: 4,
+    title: "AI workflow",
+    logged: [
+      "Prompt / template version",
+      "Model / provider version",
+      "Retrieval snapshot ID",
+      "Parameters",
+    ],
+  },
+  {
+    step: 5,
+    title: "Human review",
+    logged: [
+      "Reviewer identity",
+      "Decision (approve / edit / reject)",
+      "Reason for change",
+      "Timestamp",
+    ],
+  },
+  {
+    step: 6,
+    title: "Approved output",
+    logged: ["Output version", "Output hash", "Signer identity", "Timestamp"],
+  },
+  {
+    step: 7,
+    title: "Audit / evidence export",
+    logged: ["Export ID", "Retention policy", "Requester identity", "Timestamp"],
+  },
+];
+
+export type ScopeColumn = {
+  label: string;
+  badge: string;
+  intent: string;
+  items: string[];
+};
+
+export const SCOPE_COLUMNS: ScopeColumn[] = [
+  {
+    label: "Build in MVP",
+    badge: "Now",
+    intent: "Concrete controls shipped with the first enterprise pilot.",
+    items: [
+      "Tenant isolation",
+      "RBAC with least-privilege defaults",
+      "Encryption in transit and at rest",
+      "Audit log foundation",
+      "Access monitoring",
+      "Data classification (PHI / PII / de-identified)",
+      "Vendor questionnaire evidence pack",
+      "Basic change management",
+      "Model / prompt logging",
+    ],
+  },
+  {
+    label: "Prepare but do not overbuild",
+    badge: "Stage",
+    intent: "Designed-in hooks that let formal certification follow without rework.",
+    items: [
+      "SOC 2 Type I readiness",
+      "ISO 27001 policy structure",
+      "Part 11-compatible audit trail design",
+      "GxP validation evidence structure",
+      "Compliance evidence export",
+    ],
+  },
+  {
+    label: "Defer until customer or regulatory trigger",
+    badge: "Defer",
+    intent: "Real cost; only invest when a buyer or regulator requires it.",
+    items: [
+      "SOC 2 Type II audit",
+      "Formal ISO 27001 certification",
+      "Full Part 11 e-signature workflow",
+      "Full GxP validation package",
+      "Dedicated validation environment",
+    ],
+  },
+];
+
+export type RoadmapPhase = {
+  id: string;
+  phase: string;
+  horizon: string;
+  title: string;
+  items: string[];
+};
+
+export const ARCH_ROADMAP: RoadmapPhase[] = [
+  {
+    id: "phase-0",
+    phase: "Phase 0",
+    horizon: "Now · first 2 weeks",
+    title: "Frame the controls",
+    items: [
+      "Define control matrix",
+      "Define data classification model",
+      "Design audit log schema",
+      "Map buyer requirements to product controls",
+    ],
+  },
+  {
+    id: "phase-1",
+    phase: "Phase 1",
+    horizon: "0 – 3 months",
+    title: "MVP foundation",
+    items: [
+      "Tenant isolation",
+      "RBAC",
+      "Encryption in transit & at rest",
+      "Centralized logging",
+      "Model gateway",
+      "Basic compliance evidence folder",
+    ],
+  },
+  {
+    id: "phase-2",
+    phase: "Phase 2",
+    horizon: "3 – 6 months",
+    title: "Enterprise readiness",
+    items: [
+      "SOC 2 Type I preparation",
+      "Access review workflow",
+      "Incident response process",
+      "Vendor risk process",
+      "Security monitoring dashboard",
+    ],
+  },
+  {
+    id: "phase-3",
+    phase: "Phase 3",
+    horizon: "6 – 12 months",
+    title: "Regulated workflow readiness",
+    items: [
+      "Part 11-compatible audit / e-signature design",
+      "GxP validation package template",
+      "Traceability matrix",
+      "Release validation workflow",
+      "SOC 2 Type II evidence collection",
+    ],
+  },
+];
+
+export type Tradeoff = {
+  title: string;
+  decision: string;
+  reason: string;
+  risk: string;
+  mitigation: string;
+};
+
+export const TRADEOFFS: Tradeoff[] = [
+  {
+    title: "Certification timing vs. startup speed",
+    decision: "Pursue readiness in MVP; defer the formal audit.",
+    reason:
+      "A SOC 2 / ISO audit is 6–12 months of overhead that delays the product without unblocking the first pilots.",
+    risk: "Buyer asks for the report on day one and walks if it does not exist.",
+    mitigation:
+      "Deliver a credible readiness package and a dated audit timeline; offer security questionnaire + control narrative.",
+  },
+  {
+    title: "External LLM API vs. self-hosted model",
+    decision: "Start with a provider model behind a model gateway.",
+    reason:
+      "Self-hosting adds infra, MLOps, and validation cost the MVP cannot absorb; the gateway preserves optionality.",
+    risk: "PHI exposure or provider-side change shifts outputs without warning.",
+    mitigation:
+      "Strict redaction at the gateway, pinned model versions, signed DPA / BAA, and a documented rollback plan.",
+  },
+  {
+    title: "Rich audit logging vs. privacy & data minimization",
+    decision: "Log identifiers and versions; do not log raw PHI.",
+    reason:
+      "GDPR and HIPAA expect minimization, but auditors expect reproducibility — both can be met with references.",
+    risk: "Logs accidentally capture sensitive content during incidents.",
+    mitigation:
+      "Field-level redaction before write, encrypted log store, restricted log access, regular log content audits.",
+  },
+  {
+    title: "Part 11 compatibility vs. full Part 11 validation",
+    decision: "Design the audit trail and signing workflow to be Part 11-compatible without claiming compliance.",
+    reason:
+      "Full Part 11 validation only matters when the platform becomes system-of-record; most MVP buyers are not yet there.",
+    risk: "First regulated buyer treats the design as a compliance claim.",
+    mitigation:
+      "Explicit language: 'Part 11-ready architecture; validation completed jointly with customer at deployment time.'",
+  },
+  {
+    title: "Broad compliance coverage vs. focused MVP controls",
+    decision: "Pick the controls that unlock the first enterprise pilot, not the union of every framework.",
+    reason:
+      "Over-claiming dilutes credibility; auditors notice 'check-the-box' coverage immediately.",
+    risk: "A buyer's framework (e.g., HITRUST) is not in scope and slows the deal.",
+    mitigation:
+      "Maintain a framework crosswalk so net-new requirements are scoped, not surprises.",
+  },
+];
+
+export type NextStepRow = {
+  controlArea: string;
+  buyerConcern: string;
+  productFeature: string;
+  evidence: string;
+  priority: string;
+  owner: string;
+};
+
+export const NEXT_STEP_MATRIX: NextStepRow[] = [
+  {
+    controlArea: "Access control",
+    buyerConcern: "Can only authorized users access data?",
+    productFeature: "SSO + RBAC",
+    evidence: "Access policy, access review log",
+    priority: "Must-have",
+    owner: "Engineering / Security",
+  },
+  {
+    controlArea: "Audit trail",
+    buyerConcern: "Can actions be reconstructed?",
+    productFeature: "Immutable event log",
+    evidence: "Audit log export",
+    priority: "Must-have",
+    owner: "Engineering",
+  },
+  {
+    controlArea: "AI reproducibility",
+    buyerConcern: "Can AI output be traced?",
+    productFeature: "Prompt / model version logging",
+    evidence: "Output trace record",
+    priority: "Must-have",
+    owner: "ML / Platform",
+  },
+  {
+    controlArea: "Regulated records",
+    buyerConcern: "Can e-records and e-signatures be trusted?",
+    productFeature: "Part 11-compatible audit / e-signature design",
+    evidence: "Validation evidence",
+    priority: "Later",
+    owner: "Product / Compliance",
+  },
+];
 
 export const REFERENCES: { category: string; items: ReferenceItem[] }[] = [
   {
