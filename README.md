@@ -2,11 +2,11 @@
 
 ## Topic Chosen
 
-Topic B: Software validation for a cloud-native AI SaaS platform used in clinical programming workflows.
+Topic B: Software Validation for AI clinical programming workflows.
 
 ## Executive Summary
 
-This local presentation website explains how Yesod AI can make an LLM-enabled clinical programming platform credible for enterprise pharma, biotech, and CRO buyers. The core recommendation is to treat validation as a product capability from the MVP stage: intended use, risk-based IQ/OQ/PQ evidence, audit trails, prompt/model versioning, human review, and drift monitoring.
+This local React presentation explains how a cloud-native AI SaaS platform for clinical programming can become validation-ready without overclaiming validation status. The core thesis is that intended use, requirements, IQ/OQ/PQ evidence, traceability, audit records, human review, and change control must be designed into the product before regulated outputs can be defended.
 
 ## Run Locally
 
@@ -15,7 +15,7 @@ npm install
 npm run dev
 ```
 
-The Vite dev server is configured for `http://localhost:5173`.
+Vite defaults to `http://localhost:5173`; if that port is already in use, it will choose the next available localhost port.
 
 ## Tools Used
 
@@ -24,25 +24,25 @@ The Vite dev server is configured for `http://localhost:5173`.
 - TypeScript
 - Tailwind CSS
 - lucide-react
-- Codex / ChatGPT for implementation support
+- Codex
+- ChatGPT
 - Figma not used
 
 ## What I Would Improve With More Time
 
-- Replace placeholder reference notes with official source links and brief citations.
-- Add a printable one-page executive summary for interview follow-up.
-- Add a compact validation artifact map showing URS -> FRS -> risk -> IQ/OQ/PQ traceability.
-- Add a sample golden validation dataset table with expected outputs and acceptance criteria.
-- Add a customer-facing validation evidence appendix covering IQ/OQ/PQ protocols, traceability matrix, and 21 CFR Part 11-style audit and signing design.
+- Replace placeholder reference notes with official source links and short citations.
+- Add a downloadable validation evidence packet example.
+- Expand the golden ADaM-like validation dataset with expected outputs and acceptance criteria.
+- Add sample IQ, OQ, and PQ protocol templates tied to the traceability matrix.
+- Add a printable interviewer handout summarizing the validation-ready MVP scope.
 
 ## Key Sources / References To Add
 
-- FDA 21 CFR Part 11: official electronic records and electronic signatures rule.
-- FDA Computer Software Assurance for Production and Quality System Software.
-- FDA guidance on Artificial Intelligence and Machine Learning in Software as a Medical Device.
-- ISPE GAMP 5 (Second Edition) risk-based validation guidance.
+- FDA 21 CFR Part 11 official electronic records and electronic signatures rule.
+- FDA Computer Software Assurance guidance.
+- ISPE GAMP 5 risk-based validation guidance.
 - ICH E6(R3) Good Clinical Practice.
 - ICH Q9(R1) Quality Risk Management.
 - CDISC SDTM and ADaM implementation guides.
-- NIST SP 800-92 log management and audit logging guidance.
-- ALCOA+ data integrity principles (MHRA / WHO).
+- ALCOA+ data integrity principles.
+

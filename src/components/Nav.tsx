@@ -9,7 +9,7 @@ export function Nav() {
         <Link
           to="/"
           exact
-          className="flex items-center gap-2 text-sm font-semibold text-[#040404]"
+          className="flex items-center gap-2 rounded-md text-sm font-semibold text-[#040404] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2488D0] focus-visible:ring-offset-2"
         >
           <span className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-[#2488D0] text-[#2488D0]">
             <ShieldCheck className="h-4 w-4" />
@@ -22,7 +22,7 @@ export function Nav() {
               key={l.path}
               to={l.path}
               exact
-              className="rounded-full px-3 py-1.5 text-[#040404] transition hover:bg-[rgba(36,136,208,0.08)]"
+              className="rounded-full px-3 py-1.5 text-[#040404] transition hover:bg-[rgba(36,136,208,0.08)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2488D0] focus-visible:ring-offset-2"
               activeClassName="!text-[#2488D0] !bg-[rgba(36,136,208,0.10)] ring-1 ring-inset ring-[#2488D0]/40"
             >
               {l.label}

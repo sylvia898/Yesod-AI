@@ -7,8 +7,8 @@ export function WhyYesod() {
       <div className="mx-auto max-w-[1200px] px-6 py-24">
         <SectionHeading
           eyebrow="Why this matters to Yesod AI"
-          title="Validation is the bridge from interesting demo to enterprise contract."
-          description="Pharma and CRO buyers do not just evaluate the product — they evaluate the evidence package behind it. The strategic value of investing early is compounding."
+          title="Validation is the bridge from good demo to trusted clinical workflow."
+          description="Pharma and CRO buyers do not just evaluate the product. They evaluate whether regulated outputs are traceable, reviewable, reproducible, and controlled over time."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {WHY_CARDS.map(({ icon: Icon, title, body }) => (

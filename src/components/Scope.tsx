@@ -9,8 +9,8 @@ export function Scope() {
       <div className="mx-auto max-w-[1200px] px-6 py-24">
         <SectionHeading
           eyebrow="Tradeoffs & MVP scope"
-          title="What to validate now, and what to defer without losing customer trust."
-          description="The goal at MVP is credibility, not completeness. A small set of controls — done well and documented — beats a sprawling, half-built compliance surface."
+          title="What to build now, and what to defer without overclaiming validation status."
+          description="The goal at MVP is credibility, not completeness. Ship the validation-ready primitives that make regulated outputs traceable, while clearly separating prepared artifacts from signed qualification evidence."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -26,6 +26,14 @@ export function Scope() {
             title="Defer until later"
             items={DEFER}
           />
+        </div>
+        <div className="mt-8 rounded-card border-l-4 border-[#2061AB] bg-white p-5 shadow-card">
+          <p className="text-[14px] leading-[1.6] text-[#040404]">
+            <span className="font-semibold text-[#12317B]">Positioning:</span>{" "}
+            Yesod can be validation-ready and GxP-aligned before it is fully
+            validated. Full validation status belongs to executed, reviewed, and
+            signed protocols for a defined intended use.
+          </p>
         </div>
       </div>
     </section>

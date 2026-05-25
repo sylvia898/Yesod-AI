@@ -1,6 +1,10 @@
-import { CheckCircle2 } from "lucide-react";
-import { VALIDATION_PACKAGE } from "../data/content";
+import { CheckCircle2, Clock, FileCheck2 } from "lucide-react";
+import { VALIDATION_PACKAGE_GROUPS } from "../data/content";
 import { SectionHeading } from "./SectionHeading";
+
+const icons = [CheckCircle2, FileCheck2, Clock];
+const borders = ["border-[#12317B]", "border-[#2061AB]", "border-[#2488D0]"];
+const text = ["text-[#12317B]", "text-[#2061AB]", "text-[#2488D0]"];
 
 export function ValidationPackage() {
   return (
@@ -8,26 +12,66 @@ export function ValidationPackage() {
       <div className="mx-auto max-w-[1200px] px-6 py-24">
         <SectionHeading
           eyebrow="Minimum viable validation package"
-          title="The evidence binder a pharma QA team expects on day one of an audit."
-          description="This is the smallest credible set of artifacts a Yesod customer would want before letting the platform touch a regulated deliverable. Each item is owned by a specific function and updated under change control."
+          title="Build validation-ready primitives now. Execute formal validation when the use case requires it."
+          description="A credible MVP should not claim it is fully validated before protocols are executed and signed. It should ship the controls, records, and structures that make formal IQ/OQ/PQ execution practical."
         />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {VALIDATION_PACKAGE.map((item) => (
-            <article
-              key={item.title}
-              className="flex items-start gap-3 rounded-card border border-[rgba(32,97,171,0.18)] bg-white p-6 shadow-card"
-            >
-              <CheckCircle2 className="mt-0.5 h-5 w-5 flex-none text-[#2061AB]" />
-              <div>
-                <h3 className="text-[15px] font-semibold text-[#12317B]">
-                  {item.title}
-                </h3>
-                <p className="mt-1 text-[14px] leading-[1.6] text-[#040404]">
-                  {item.body}
-                </p>
-              </div>
-            </article>
-          ))}
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          {VALIDATION_PACKAGE_GROUPS.map((group, index) => {
+            const Icon = icons[index];
+            return (
+              <article
+                key={group.title}
+                className={`flex h-full flex-col overflow-hidden rounded-card border-2 bg-white shadow-card ${borders[index]}`}
+              >
+                <header className="border-b border-[rgba(32,97,171,0.18)] px-6 py-5">
+                  <div className={`flex items-center gap-3 ${text[index]}`}>
+                    <span
+                      className={`inline-flex h-9 w-9 items-center justify-center rounded-md border ${borders[index]}`}
+                    >
+                      <Icon className="h-5 w-5" aria-hidden />
+                    </span>
+                    <h3 className="text-[16px] font-semibold">
+                      {group.title}
+                    </h3>
+                  </div>
+                  <p className="mt-3 text-[13px] leading-[1.55] text-[#040404]">
+                    {group.intent}
+                  </p>
+                </header>
+                <ul className="flex-1 divide-y divide-[rgba(18,49,123,0.16)]">
+                  {group.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 px-6 py-3 text-[14px] leading-[1.6] text-[#040404]"
+                    >
+                      <span
+                        className={`mt-2 h-1.5 w-1.5 flex-none rounded-full ${
+                          index === 0
+                            ? "bg-[#12317B]"
+                            : index === 1
+                              ? "bg-[#2061AB]"
+                              : "bg-[#2488D0]"
+                        }`}
+                        aria-hidden
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="mt-8 rounded-card border-l-4 border-[#2488D0] bg-white p-5 shadow-card">
+          <p className="text-[14px] leading-[1.6] text-[#040404]">
+            <span className="font-semibold text-[#12317B]">
+              Important message:
+            </span>{" "}
+            do not claim the product is fully validated before protocols are
+            actually executed and signed. Say "validation-ready" or
+            "GxP-aligned primitives" until the evidence exists.
+          </p>
         </div>
       </div>
     </section>

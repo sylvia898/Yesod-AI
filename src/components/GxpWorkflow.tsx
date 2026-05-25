@@ -1,5 +1,6 @@
 import { GXP_PILLARS } from "../data/content";
 import { SectionHeading } from "./SectionHeading";
+import { TraceabilityExample } from "./TraceabilityExample";
 
 export function GxpWorkflow() {
   return (
@@ -8,7 +9,7 @@ export function GxpWorkflow() {
         <SectionHeading
           eyebrow="GxP in clinical data workflows"
           title="Eight pillars that turn a clinical AI workflow into a regulated system."
-          description="Good Clinical Practice and Good Laboratory Practice expectations translate into eight concrete engineering capabilities that must be designed into the product, not bolted on at audit time."
+          description="Good Practice expectations translate into concrete engineering capabilities: traceability, reproducibility, access control, audit trails, data lineage, change control, and retained validation evidence."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {GXP_PILLARS.map(({ icon: Icon, title, body }) => (
@@ -28,6 +29,7 @@ export function GxpWorkflow() {
             </article>
           ))}
         </div>
+        <TraceabilityExample />
       </div>
     </section>
   );

@@ -12,6 +12,13 @@ export function NextStep() {
           <p className="mt-4 text-[16px] leading-[1.65] text-[#040404]">
             Intended use sets the boundary every downstream artifact references. A golden dataset — even ten well-chosen cases — turns validation from an annual ceremony into a daily engineering discipline.
           </p>
+          <div className="mt-6 rounded-lg border border-[#2488D0] bg-white p-5">
+            <p className="text-[16px] font-semibold leading-[1.6] text-[#12317B]">
+              Build validation primitives now. Do not overclaim validation
+              status. Make every regulated output replayable, reviewable, and
+              traceable.
+            </p>
+          </div>
         </div>
       </div>
     </section>
