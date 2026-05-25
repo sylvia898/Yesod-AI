@@ -235,7 +235,7 @@ Write a strong README with:
    npm install
    npm run dev
    ```
-4. Tools used: React, Vite, TypeScript, Tailwind CSS, lucide-react, Claude Code, ChatGPT, Figma if used
+4. Tools used: React, Vite, TypeScript, Tailwind CSS, lucide-react, Codex, ChatGPT, Figma if used
 5. What I would improve with more time
 6. Key sources / references to add
 
