@@ -48,7 +48,7 @@ export const HERO = {
     "GxP-aligned qualification across IQ, OQ, and PQ",
     "Reproducible LLM outputs with versioned prompts and models",
     "Immutable audit trail covering every inference and human review",
-    "Security controls that satisfy early enterprise vendor review",
+    "Validation primitives that satisfy early sponsor and QA review",
     "MVP-first roadmap with deferred enterprise depth",
   ],
 };
@@ -105,7 +105,7 @@ export const WHY_CARDS: WhyCard[] = [
     icon: FileSignature,
     title: "Procurement and audit",
     body:
-      "Validation summary reports, SOC 2 alignment, and traceable change control answer the vendor questionnaire before it is even sent.",
+      "Validation summary reports, traceable change control, and a signed evidence binder answer QA and inspection questions before they are even asked.",
   },
   {
     icon: AlertTriangle,
@@ -124,25 +124,25 @@ export type ComplianceLens = {
 
 export const COMPLIANCE_LENSES: ComplianceLens[] = [
   {
-    icon: ShieldCheck,
-    title: "General security compliance",
-    signal: "SOC 2 Type I readiness first; Type II after controls operate over time. ISO 27001 can follow for global procurement depth.",
+    icon: ClipboardCheck,
+    title: "Intended use & fitness for purpose",
+    signal: "GxP starts with a documented intended use statement and a risk assessment that ties every requirement to a patient-safety or data-integrity concern.",
     body:
-      "Shows enterprise buyers that Yesod protects customer data through access controls, encryption, vendor risk, incident response, logging, and operational governance.",
+      "Validation is the proof — not the promise — that the system does what its intended use says it does. Without it, regulated programmers cannot use the tool for submission-supporting deliverables.",
   },
   {
-    icon: ClipboardCheck,
-    title: "Life sciences validation",
-    signal: "GxP asks whether the system is fit for its intended use, with risk-based IQ, OQ, PQ, traceability, change control, and validation evidence.",
+    icon: ShieldCheck,
+    title: "Qualification across IQ, OQ, PQ",
+    signal: "Risk-based IQ, OQ, and PQ generate the test evidence that a system is installed, operates, and performs as specified in the target clinical workflow.",
     body:
-      "This is different from SOC 2: the question is not only whether the company is secure, but whether regulated clinical outputs are reproducible, reviewed, and audit-defensible.",
+      "Each qualification phase produces signed artifacts — environment baselines, functional test results, real-world scenario runs — that a sponsor or inspector can re-walk years after release.",
   },
   {
     icon: FileSignature,
-    title: "Privacy and regulated records",
-    signal: "HIPAA, GDPR, and 21 CFR Part 11 depend on data type and workflow; de-identified trial data lowers scope but does not remove diligence.",
+    title: "Audit evidence & 21 CFR Part 11",
+    signal: "Electronic records and signatures must be attributable, contemporaneous, complete, and retained for the life of the regulated activity.",
     body:
-      "The architecture should classify PHI and personal data, preserve electronic records, support e-signature-ready attestations, and retain evidence for inspections.",
+      "An immutable audit trail of inputs, model and prompt versions, retrieval context, outputs, and reviewer attestations is what makes an AI-generated deliverable defensible.",
   },
 ];
 
@@ -535,7 +535,7 @@ export const ROADMAP: Phase[] = [
       "Golden datasets and automated evaluations",
       "Reviewer step with electronic signature semantics",
       "Change control workflow for prompts and models",
-      "Audit export for customer security reviews",
+      "Audit evidence export for sponsor and QA review",
     ],
   },
   {
@@ -551,13 +551,13 @@ export const ROADMAP: Phase[] = [
   },
   {
     id: "phase-3",
-    title: "Phase 3 · Enterprise readiness",
+    title: "Phase 3 · Part 11 & regulated-record depth",
     horizon: "Months 9–14",
     bullets: [
-      "SOC 2 Type I → Type II alignment",
-      "21 CFR Part 11-style e-signature and record controls",
-      "Continuous drift monitoring with alerting",
-      "Customer-tenant data residency options",
+      "21 CFR Part 11 e-signature semantics and signer identity proofing",
+      "Long-term record retention and integrity controls",
+      "Continuous drift monitoring with re-validation triggers",
+      "Per-tenant validation environment for customer-led PQ",
     ],
   },
   {
@@ -574,27 +574,24 @@ export const ROADMAP: Phase[] = [
 ];
 
 export const MUST_HAVE: string[] = [
-  "Intended use and URS",
-  "SOC 2-ready security control narrative",
-  "Encryption, access monitoring, and tenant isolation",
+  "Intended use statement and URS",
+  "Risk assessment tied to patient safety and data integrity",
   "Pinned models and versioned prompts",
-  "RBAC with least-privilege defaults",
   "Append-only audit log of every inference",
   "Reviewer attestation for regulated outputs",
   "Golden dataset with expected outputs",
-  "Change control for prompts and models",
-  "Data classification for PHI, personal data, and de-identified trials",
+  "Change control for prompts, models, and retrieval indices",
+  "Traceability matrix from URS to test evidence",
+  "Validation-grade event log with model, prompt, and retrieval IDs",
 ];
 
 export const DEFER: string[] = [
   "Formal IQ/OQ/PQ protocols and signed VSR",
   "Full 21 CFR Part 11 electronic signature module",
-  "SOC 2 Type II audit",
-  "ISO 27001 certification",
-  "HIPAA/GDPR expansion for identifiable production data",
   "Customer-managed validation harness",
-  "Per-tenant data residency",
+  "Per-tenant validation environment",
   "Continuous validation dashboards",
+  "Automated re-validation on model or corpus change",
 ];
 
 export type ReferenceItem = { title: string; note: string };
@@ -612,22 +609,22 @@ export type ArchSummaryCard = {
 
 export const ARCH_SUMMARY: ArchSummaryCard[] = [
   {
-    icon: ShieldCheck,
-    label: "Security baseline",
-    title: "SOC 2 / ISO 27001 readiness",
-    body: "Foundational controls — access, encryption, vendor risk, logging — designed to clear enterprise InfoSec review.",
-  },
-  {
     icon: ClipboardCheck,
-    label: "Regulatory readiness",
-    title: "GxP & 21 CFR Part 11 support",
-    body: "Validated workflow primitives — traceability, change control, e-record integrity — ready for regulated phases.",
+    label: "Intended use",
+    title: "GxP fitness for clinical workflows",
+    body: "Documented intended use, URS/FRS, and risk assessment anchor every validation activity to a real clinical responsibility.",
   },
   {
-    icon: Lock,
-    label: "Privacy posture",
-    title: "HIPAA / GDPR-aware data flow",
-    body: "Data is classified, minimized, and isolated per tenant; de-identified by default; auditable end-to-end.",
+    icon: ShieldCheck,
+    label: "Qualification",
+    title: "Risk-based IQ / OQ / PQ",
+    body: "Installation, operational, and performance qualification produce signed evidence that the system is fit for its target workflow.",
+  },
+  {
+    icon: FileSignature,
+    label: "Audit evidence",
+    title: "Part 11-ready record & signature trail",
+    body: "Immutable trail of inputs, model and prompt versions, retrieval snapshots, outputs, and reviewer attestations — replayable years later.",
   },
 ];
 
@@ -642,30 +639,30 @@ export type ComplianceLayer = {
 export const COMPLIANCE_LAYERS: ComplianceLayer[] = [
   {
     tier: "Layer 1",
-    title: "Enterprise security",
-    frameworks: ["SOC 2 Type I/II", "ISO 27001"],
+    title: "Intended use & validation planning",
+    frameworks: ["URS / FRS", "Risk assessment", "GAMP 5 category"],
     explanation:
-      "Baseline trust controls every B2B SaaS vendor is expected to demonstrate before procurement will sign.",
+      "Frames what the system is for, who it is for, and the risk posture that drives test rigor and review depth.",
     buyerSignal:
-      "InfoSec reviewers gate the contract on these; without them, the conversation never reaches the science team.",
+      "Quality and regulatory teams gate adoption on a credible intended use and risk-based plan before any test evidence is reviewed.",
   },
   {
     tier: "Layer 2",
-    title: "Life sciences readiness",
-    frameworks: ["GxP", "GCP", "GLP", "21 CFR Part 11"],
+    title: "Qualification & test evidence",
+    frameworks: ["IQ", "OQ", "PQ", "Traceability matrix"],
     explanation:
-      "Evidence that the platform can support validated, audit-defensible workflows around regulated clinical activity.",
+      "Risk-based qualification produces signed test results that map every functional requirement to executed evidence.",
     buyerSignal:
-      "Quality and regulatory teams gate adoption inside trials on this; SOC 2 alone does not prove fitness for GxP use.",
+      "Sponsors and inspectors expect to walk URS → FRS → test case → result without gaps; missing traceability is the most common finding.",
   },
   {
     tier: "Layer 3",
-    title: "Privacy & data protection",
-    frameworks: ["HIPAA", "GDPR", "De-identified trial data"],
+    title: "Audit evidence & change control",
+    frameworks: ["21 CFR Part 11", "ICH GCP", "Change control"],
     explanation:
-      "Controls around personal and health data — lawful basis, minimization, subject rights, and re-identification risk.",
+      "Immutable records, e-signature semantics, and a documented change process keep validated behavior defensible over time.",
     buyerSignal:
-      "Privacy and legal teams gate cross-border and PHI workflows here; de-identification reduces — but does not erase — scope.",
+      "Auditors look first at the change log and the signed VSR; a clean trail is the difference between an inspection finding and a clean close-out.",
   },
 ];
 
@@ -679,43 +676,57 @@ export type MappingRow = {
 
 export const COMPLIANCE_MAPPING: MappingRow[] = [
   {
-    framework: "SOC 2 Type I",
-    proves: "Design of security controls at a point in time.",
+    framework: "Intended use & URS",
+    proves: "What the system is for and what testable user needs follow from it.",
     capability:
-      "Documented policies, access control design, vendor risk process, change management baseline.",
+      "Intended use statement, URS, scope boundaries, out-of-scope declarations.",
+    priority: "MVP",
+    evidence: "Signed intended use statement, URS, scope and assumptions log.",
+  },
+  {
+    framework: "Risk assessment (ICH Q9)",
+    proves: "That qualification rigor matches patient and data-integrity risk.",
+    capability:
+      "Risk register linking hazards to controls and test coverage.",
+    priority: "MVP",
+    evidence: "Risk register, severity/probability scoring, mitigation map.",
+  },
+  {
+    framework: "IQ — Installation Qualification",
+    proves: "The system is installed and configured to specification.",
+    capability:
+      "Infrastructure-as-code baselines, container image digests, pinned model and library versions.",
     priority: "MVP-ready",
-    evidence: "Policy set, control narrative, access matrix, vendor list.",
+    evidence: "Signed IaC plans, SBOMs, model + prompt version manifest, environment diff.",
   },
   {
-    framework: "SOC 2 Type II",
-    proves: "Operating effectiveness of controls across a 6–12 month window.",
+    framework: "OQ — Operational Qualification",
+    proves: "Each function operates correctly against documented requirements.",
     capability:
-      "Continuous audit logs, access reviews, incident records, change management evidence.",
-    priority: "Later",
-    evidence:
-      "Audit log exports, quarterly access reviews, incident postmortems, change tickets.",
-  },
-  {
-    framework: "ISO 27001",
-    proves: "Formal Information Security Management System (ISMS).",
-    capability:
-      "Risk register, asset inventory, ISMS policies, internal audit program.",
-    priority: "Later",
-    evidence: "ISMS scope, Statement of Applicability, risk register, internal audit reports.",
-  },
-  {
-    framework: "GxP readiness",
-    proves: "Ability to support validated workflows in regulated clinical use.",
-    capability:
-      "Validation plan, requirements traceability, test evidence, controlled change process.",
+      "Automated test suites, golden datasets, deterministic evaluations of RAG and LLM components.",
     priority: "MVP-ready",
-    evidence:
-      "Validation plan, URS/FRS, traceability matrix, IQ/OQ/PQ test results.",
+    evidence: "Test execution logs, requirement coverage, golden-dataset diff reports.",
+  },
+  {
+    framework: "PQ — Performance Qualification",
+    proves: "The system performs in real clinical workflows under intended use.",
+    capability:
+      "Programmer-in-the-loop scenarios on SDTM/ADaM data with end-to-end audit capture.",
+    priority: "Later",
+    evidence: "Signed scenario logs, reviewer attestations, sample TLF outputs.",
+  },
+  {
+    framework: "Traceability matrix",
+    proves: "Every requirement maps to a test case and to executed evidence.",
+    capability:
+      "Tooling that links URS ↔ FRS ↔ test cases ↔ runs ↔ outputs across releases.",
+    priority: "MVP-ready",
+    evidence: "Live traceability matrix exported per release.",
   },
   {
     framework: "21 CFR Part 11",
     proves:
-      "Electronic records and signatures are trustworthy when the product is system-of-record.",
+      "Electronic records and signatures are attributable, contemporaneous, and durable.",
     capability:
       "Immutable audit trail, e-signature meaning, signer identity, timestamp, record retention.",
     priority: "On trigger",
@@ -723,31 +734,20 @@ export const COMPLIANCE_MAPPING: MappingRow[] = [
       "Audit trail spec, e-signature workflow, retention policy, identity proof linkage.",
   },
   {
-    framework: "HIPAA",
-    proves: "Safeguards when Protected Health Information is processed.",
+    framework: "Change control (GAMP 5)",
+    proves: "Material changes to validated behavior are reviewed and re-qualified.",
     capability:
-      "Access safeguards, encryption at rest/transit, audit logs, BAA readiness.",
+      "Documented review/approval for code, prompt, model, schema, and retrieval index changes.",
     priority: "MVP",
-    evidence:
-      "Encryption inventory, access logs, breach response plan, signed BAAs.",
+    evidence: "Change tickets, approval records, re-validation test runs.",
   },
   {
-    framework: "GDPR",
-    proves: "Lawful and proportionate handling of EU personal data.",
+    framework: "Validation Summary Report",
+    proves: "Signed conclusion that the system is fit for intended use with known limits.",
     capability:
-      "Data minimization, DPA support, deletion/export workflow, lawful basis records.",
-    priority: "MVP",
-    evidence:
-      "Data map, DPA template, DSAR runbook, lawful basis register.",
-  },
-  {
-    framework: "De-identified clinical data",
-    proves: "Reduced — but not zero — privacy risk for trial datasets.",
-    capability:
-      "De-identification assumptions, re-identification risk controls, contractual boundaries.",
-    priority: "MVP",
-    evidence:
-      "De-id method statement, risk assessment, MSA/DPA clauses, customer scope letter.",
+      "Consolidated narrative across IQ, OQ, PQ, risk, traceability, and known limitations.",
+    priority: "Later",
+    evidence: "Signed VSR per release, retained for the life of the system.",
   },
 ];
 
@@ -776,7 +776,7 @@ export const ARCH_LAYERS: ArchLayerCard[] = [
       "Tenant-aware permissions",
     ],
     complianceReason:
-      "RBAC + SSO supports SOC 2 access control criteria and Part 11 user identity requirements.",
+      "Strong user identity and least-privilege access are prerequisites for Part 11 attributable records and reviewer attestation.",
   },
   {
     step: 2,
@@ -824,7 +824,7 @@ export const ARCH_LAYERS: ArchLayerCard[] = [
       "Secrets management & retention",
     ],
     complianceReason:
-      "Encryption + tenant isolation is the technical proof behind HIPAA, GDPR, and SOC 2 confidentiality claims.",
+      "Tenant-isolated, versioned data and retrieval state is what makes a regulated output reproducible months after release.",
   },
   {
     step: 6,
@@ -836,7 +836,7 @@ export const ARCH_LAYERS: ArchLayerCard[] = [
       "Compliance evidence export · alerting",
     ],
     complianceReason:
-      "An independent evidence store is what survives vendor assessment and regulated traceability requests.",
+      "An independent evidence store is what survives inspections and regulated traceability requests years after a release.",
   },
 ];
 
@@ -859,8 +859,8 @@ export const AI_RISKS: AiRisk[] = [
   },
   {
     risk: "Data leakage",
-    why: "PHI / PII can flow into prompts, logs, or vector stores unintentionally.",
-    control: "PHI/PII redaction, per-tenant isolation, data minimization at ingest.",
+    why: "Sensitive trial data can flow into prompts, logs, or vector stores unintentionally and break reproducibility evidence.",
+    control: "Field-level redaction, per-tenant isolation, data minimization at ingest, and references-not-content in the audit trail.",
   },
   {
     risk: "Hallucinated output",
@@ -889,7 +889,7 @@ export const DATA_FLOW: DataFlowStep[] = [
   {
     step: 2,
     title: "Classification & redaction",
-    logged: ["PHI / PII classification", "Redaction policy version", "Timestamp"],
+    logged: ["Data sensitivity classification", "Redaction policy version", "Timestamp"],
   },
   {
     step: 3,
@@ -939,41 +939,40 @@ export const SCOPE_COLUMNS: ScopeColumn[] = [
   {
     label: "Build in MVP",
     badge: "Now",
-    intent: "Concrete controls shipped with the first enterprise pilot.",
+    intent: "Concrete validation primitives shipped with the first pilot.",
     items: [
-      "Tenant isolation",
-      "RBAC with least-privilege defaults",
-      "Encryption in transit and at rest",
-      "Audit log foundation",
-      "Access monitoring",
-      "Data classification (PHI / PII / de-identified)",
-      "Vendor questionnaire evidence pack",
-      "Basic change management",
-      "Model / prompt logging",
+      "Intended use statement and URS draft",
+      "Risk assessment (ICH Q9-aligned)",
+      "Pinned models and versioned prompts",
+      "Append-only audit log of every inference",
+      "Reviewer attestation on regulated outputs",
+      "Golden dataset and automated evaluations",
+      "Change control for prompts, models, and indices",
+      "Output traceability records (model + prompt + retrieval + input)",
     ],
   },
   {
     label: "Prepare but do not overbuild",
     badge: "Stage",
-    intent: "Designed-in hooks that let formal certification follow without rework.",
+    intent: "Designed-in hooks that let formal qualification follow without rework.",
     items: [
-      "SOC 2 Type I readiness",
-      "ISO 27001 policy structure",
-      "Part 11-compatible audit trail design",
-      "GxP validation evidence structure",
-      "Compliance evidence export",
+      "IQ/OQ/PQ protocol templates and traceability matrix structure",
+      "Part 11-compatible audit trail and signing workflow design",
+      "Validation evidence export for sponsors and QA",
+      "Drift monitoring with re-validation triggers",
+      "Per-tenant validation environment scaffolding",
     ],
   },
   {
     label: "Defer until customer or regulatory trigger",
     badge: "Defer",
-    intent: "Real cost; only invest when a buyer or regulator requires it.",
+    intent: "Real cost; only invest when a sponsor or inspector requires it.",
     items: [
-      "SOC 2 Type II audit",
-      "Formal ISO 27001 certification",
-      "Full Part 11 e-signature workflow",
-      "Full GxP validation package",
-      "Dedicated validation environment",
+      "Full IQ/OQ/PQ execution and signed Validation Summary Report",
+      "Full Part 11 e-signature module with identity proofing",
+      "Customer-managed validation harness",
+      "Per-tenant validation environment in production",
+      "Continuous validation dashboards",
     ],
   },
 ];
@@ -1003,40 +1002,40 @@ export const ARCH_ROADMAP: RoadmapPhase[] = [
     id: "phase-1",
     phase: "Phase 1",
     horizon: "0 – 3 months",
-    title: "MVP foundation",
+    title: "MVP validation foundation",
     items: [
-      "Tenant isolation",
-      "RBAC",
-      "Encryption in transit & at rest",
-      "Centralized logging",
-      "Model gateway",
-      "Basic compliance evidence folder",
+      "Intended use statement and URS draft",
+      "Pinned models and versioned prompts",
+      "Model gateway with version tracking",
+      "Append-only inference + review log",
+      "Golden dataset v0 with expected outputs",
+      "Risk assessment v0",
     ],
   },
   {
     id: "phase-2",
     phase: "Phase 2",
     horizon: "3 – 6 months",
-    title: "Enterprise readiness",
+    title: "Auditable workflows",
     items: [
-      "SOC 2 Type I preparation",
-      "Access review workflow",
-      "Incident response process",
-      "Vendor risk process",
-      "Security monitoring dashboard",
+      "Reviewer step with e-signature semantics",
+      "Change control for prompts, models, and indices",
+      "Automated OQ evaluations on every release",
+      "Drift detection with re-validation triggers",
+      "Validation evidence export for sponsors and QA",
     ],
   },
   {
     id: "phase-3",
     phase: "Phase 3",
     horizon: "6 – 12 months",
-    title: "Regulated workflow readiness",
+    title: "Formal qualification & Part 11 depth",
     items: [
-      "Part 11-compatible audit / e-signature design",
-      "GxP validation package template",
-      "Traceability matrix",
-      "Release validation workflow",
-      "SOC 2 Type II evidence collection",
+      "Part 11-compatible audit / e-signature implementation",
+      "IQ / OQ / PQ protocols executed per release",
+      "Live traceability matrix",
+      "Signed Validation Summary Report",
+      "Customer-ready evidence binder",
     ],
   },
 ];
@@ -1051,49 +1050,49 @@ export type Tradeoff = {
 
 export const TRADEOFFS: Tradeoff[] = [
   {
-    title: "Certification timing vs. startup speed",
-    decision: "Pursue readiness in MVP; defer the formal audit.",
+    title: "Validation depth vs. startup speed",
+    decision: "Ship validation-ready primitives in MVP; defer full IQ/OQ/PQ execution.",
     reason:
-      "A SOC 2 / ISO audit is 6–12 months of overhead that delays the product without unblocking the first pilots.",
-    risk: "Buyer asks for the report on day one and walks if it does not exist.",
+      "A full validation package on day one is months of overhead that delays the product without unblocking the first pilots.",
+    risk: "Sponsor or QA asks for a signed VSR on day one and walks if it does not exist.",
     mitigation:
-      "Deliver a credible readiness package and a dated audit timeline; offer security questionnaire + control narrative.",
+      "Deliver a credible validation plan, dated qualification timeline, and a working evidence binder skeleton populated per release.",
   },
   {
     title: "External LLM API vs. self-hosted model",
     decision: "Start with a provider model behind a model gateway.",
     reason:
-      "Self-hosting adds infra, MLOps, and validation cost the MVP cannot absorb; the gateway preserves optionality.",
-    risk: "PHI exposure or provider-side change shifts outputs without warning.",
+      "Self-hosting adds infra, MLOps, and re-qualification cost the MVP cannot absorb; the gateway preserves optionality and version pinning.",
+    risk: "Provider-side model upgrade silently shifts outputs and breaks reproducibility.",
     mitigation:
-      "Strict redaction at the gateway, pinned model versions, signed DPA / BAA, and a documented rollback plan.",
+      "Pinned model versions, provider deprecation feed, golden-test gate on every change, documented rollback procedure.",
   },
   {
-    title: "Rich audit logging vs. privacy & data minimization",
-    decision: "Log identifiers and versions; do not log raw PHI.",
+    title: "Rich audit logging vs. data minimization",
+    decision: "Log identifiers, versions, and hashes; do not persist raw clinical content.",
     reason:
-      "GDPR and HIPAA expect minimization, but auditors expect reproducibility — both can be met with references.",
-    risk: "Logs accidentally capture sensitive content during incidents.",
+      "Reproducibility for inspectors and minimization for sponsors can both be met with references and content hashes.",
+    risk: "Logs accidentally capture sensitive content during incident triage.",
     mitigation:
-      "Field-level redaction before write, encrypted log store, restricted log access, regular log content audits.",
+      "Field-level redaction before write, encrypted log store, restricted log access, and periodic log-content reviews.",
   },
   {
-    title: "Part 11 compatibility vs. full Part 11 validation",
-    decision: "Design the audit trail and signing workflow to be Part 11-compatible without claiming compliance.",
+    title: "Part 11 compatibility vs. full Part 11 implementation",
+    decision: "Design the audit trail and signing workflow to be Part 11-compatible without claiming full compliance.",
     reason:
-      "Full Part 11 validation only matters when the platform becomes system-of-record; most MVP buyers are not yet there.",
-    risk: "First regulated buyer treats the design as a compliance claim.",
+      "Full Part 11 only matters when the platform is the system-of-record; most MVP customers run it alongside an existing eTMF or eQMS.",
+    risk: "First regulated buyer treats the design statement as a compliance claim.",
     mitigation:
-      "Explicit language: 'Part 11-ready architecture; validation completed jointly with customer at deployment time.'",
+      "Explicit language: 'Part 11-ready architecture; full qualification completed jointly with customer at deployment time.'",
   },
   {
-    title: "Broad compliance coverage vs. focused MVP controls",
-    decision: "Pick the controls that unlock the first enterprise pilot, not the union of every framework.",
+    title: "Full validation matrix vs. focused MVP scope",
+    decision: "Pick the validation artifacts that unblock the first pilot, not the union of every GxP framework.",
     reason:
-      "Over-claiming dilutes credibility; auditors notice 'check-the-box' coverage immediately.",
-    risk: "A buyer's framework (e.g., HITRUST) is not in scope and slows the deal.",
+      "Over-claiming dilutes credibility; reviewers notice 'check-the-box' validation immediately.",
+    risk: "A sponsor's internal framework asks for an artifact not in scope and slows the deal.",
     mitigation:
-      "Maintain a framework crosswalk so net-new requirements are scoped, not surprises.",
+      "Maintain an artifact crosswalk so net-new requests are scoped additions, not surprises.",
   },
 ];
 
@@ -1187,32 +1186,28 @@ export const REFERENCES: { category: string; items: ReferenceItem[] }[] = [
     ],
   },
   {
-    category: "Cloud security & audit logging",
+    category: "Audit logging & evidence",
     items: [
-      {
-        title: "AICPA SOC 2 Trust Services Criteria",
-        note: "Add official AICPA source link here.",
-      },
-      {
-        title: "ISO/IEC 27001 Information Security Management",
-        note: "Add official ISO source link here.",
-      },
       {
         title: "NIST SP 800-92 — Guide to Computer Security Log Management",
         note: "Add official NIST source link here.",
       },
+      {
+        title: "ALCOA+ data integrity principles",
+        note: "Add official MHRA / WHO source link here.",
+      },
     ],
   },
   {
-    category: "Privacy & data protection",
+    category: "AI/ML validation guidance",
     items: [
       {
-        title: "HIPAA Privacy Rule and Security Rule",
-        note: "Add official HHS source link here.",
+        title: "FDA — Artificial Intelligence and Machine Learning in Software as a Medical Device",
+        note: "Add official FDA source link here.",
       },
       {
-        title: "GDPR official regulation and EDPB guidance",
-        note: "Add official EU source link here.",
+        title: "ICH Q9(R1) Quality Risk Management",
+        note: "Add official ICH source link here.",
       },
     ],
   },

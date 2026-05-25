@@ -69,18 +69,18 @@ function HeroSection() {
               Proposed Approach · Architecture
             </p>
             <h1 className="mt-6 text-[44px] font-semibold leading-[1.05] text-[#12317B] sm:text-[52px]">
-              Compliance-by-Design Architecture
+              Validation-Ready Architecture
               <br />
-              <span className="text-[#2061AB]">for Enterprise AI SaaS</span>
+              <span className="text-[#2061AB]">for AI Clinical Programming</span>
             </h1>
             <p className="mt-6 max-w-2xl text-[17px] leading-[1.65] text-[#040404]">
-              Enterprise pharma customers do not only buy AI capability; they buy
-              trust, traceability, controlled data flow, and evidence that the
-              platform can survive vendor assessment and future regulatory
-              validation.
+              Pharma, biotech, and CRO programmers do not only buy AI capability;
+              they buy intended use, traceability, qualified workflows, and
+              evidence that an AI-generated deliverable can be defended in an
+              inspection years later.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3 text-xs">
-              <Anchor href="#stack">Compliance stack</Anchor>
+              <Anchor href="#stack">Validation stack</Anchor>
               <Dot />
               <Anchor href="#diagram">Architecture diagram</Anchor>
               <Dot />
@@ -139,9 +139,9 @@ function ComplianceStackSection() {
       <div className={CONTAINER}>
         <ArchSectionHeader
           index="02"
-          eyebrow="Compliance landscape"
+          eyebrow="Validation landscape"
           title="Three layers, not one checklist."
-          description="General SaaS security and regulated life-science workflows are separate buying motions. The architecture must satisfy both, with privacy as a connecting layer."
+          description="Validation is not a single artifact; it is a stack — intended use, qualified evidence, and durable audit records — each layer earning the next."
         />
 
         <div className="mt-10 space-y-3">
@@ -191,9 +191,9 @@ function ComplianceStackSection() {
         </div>
 
         <p className="mt-6 max-w-3xl text-[13px] leading-[1.55] text-[#040404]/75">
-          A SOC 2 report does not unlock a regulated clinical workflow. A GxP
-          binder does not pass an InfoSec questionnaire. Carrying both
-          conversations is the work.
+          A clean test report on its own does not survive an inspection without
+          intended use to frame it. A signed VSR does not hold up without the
+          traceability matrix beneath it. Each layer earns the next.
         </p>
       </div>
     </section>
@@ -229,9 +229,9 @@ function ComplianceMappingSection() {
       <div className={CONTAINER}>
         <ArchSectionHeader
           index="03"
-          eyebrow="Compliance → architecture mapping"
-          title="Each framework drives a specific product capability."
-          description="Compliance is not a wall around the product; it is a set of capabilities the product must already have. This mapping is how engineering and compliance stop talking past each other."
+          eyebrow="Validation → architecture mapping"
+          title="Each validation artifact drives a specific product capability."
+          description="Validation is not a wrapper around the product; it is a set of capabilities the product must already have. This mapping is how engineering and quality stop talking past each other."
         />
 
         <div className="mt-10">
@@ -278,9 +278,9 @@ function LegendKey({ priority }: { priority: string }) {
 
 const legendCopy: Record<string, string> = {
   MVP: "Ship in v1",
-  "MVP-ready": "Design now, evidence later",
-  Later: "Phased, post-pilot",
-  "On trigger": "Only when a customer requires it",
+  "MVP-ready": "Design now, execute evidence later",
+  Later: "Phased, post-pilot qualification",
+  "On trigger": "Only when a sponsor or inspector requires it",
 };
 
 // ---------------------------------------------------------------
@@ -365,7 +365,7 @@ function AiRiskSection() {
           index="05"
           eyebrow="AI control plane"
           title="AI adds a second control plane."
-          description="Traditional SaaS controls (access, encryption, logging) are necessary but not sufficient. The AI workflow itself needs versioning, review, and reproducibility primitives."
+          description="Traditional CSV assumes deterministic, frozen software. LLM-based workflows are not deterministic by default — the AI layer itself needs versioning, review, and reproducibility primitives or no test result is repeatable."
         />
 
         <div className="mt-10 grid gap-4 md:grid-cols-3 lg:grid-cols-5">
@@ -386,9 +386,10 @@ function AiRiskSection() {
             <span className="font-semibold text-[#12317B]">
               Why the second plane matters:
             </span>{" "}
-            a SOC 2 audit will pass even if every prompt has been silently
-            rewritten and every model has been upgraded. The product control is
-            what protects validated behavior in between audits.
+            a clean qualification run is meaningless if prompts can be silently
+            rewritten or the upstream model can be upgraded without notice. The
+            product control plane is what keeps validated behavior valid in
+            between releases.
           </p>
         </div>
       </div>
@@ -406,7 +407,7 @@ function DataFlowSection() {
         <ArchSectionHeader
           index="06"
           eyebrow="Data flow"
-          title="Compliance lives in the data path, not in the certificate."
+          title="Validation evidence lives in the data path, not in a binder on a shelf."
           description="At each step, the system records the identifiers needed to reconstruct what happened, who acted, and which versions were involved."
         />
 
@@ -454,7 +455,7 @@ function DataFlowSection() {
           <NoteCard
             icon={Lock}
             title="What never gets logged in cleartext"
-            body="Raw PHI / PII, secrets, full model prompts containing sensitive content. References and hashes only."
+            body="Raw clinical content, secrets, and full prompt bodies. The audit trail captures references, IDs, and hashes — never the underlying sensitive payload."
           />
           <NoteCard
             icon={Network}
@@ -498,13 +499,13 @@ function ScopeSection() {
         <ArchSectionHeader
           index="07"
           eyebrow="MVP vs. later scope"
-          title="Compliance-ready, not compliance-certified."
+          title="Validation-ready, not pre-claimed."
           description={
             <>
-              Do not claim certification before the company has actually
-              completed the audit. The MVP earns trust by shipping the controls
-              that real buyers ask about — and clearly marking what is staged
-              versus what is deferred.
+              Do not declare a system validated before the protocols have
+              actually been executed and signed. The MVP earns trust by shipping
+              the validation primitives that QA and regulatory teams ask about —
+              and clearly marking what is staged versus what is deferred.
             </>
           }
         />
@@ -574,10 +575,10 @@ function ScopeSection() {
           <ClipboardCheck className="mt-0.5 h-4 w-4 flex-none text-[#2488D0]" aria-hidden />
           <p className="text-[14px] leading-[1.6] text-[#040404]">
             <span className="font-semibold text-[#12317B]">Posture:</span>{" "}
-            “Yesod AI is designed for SOC 2, ISO 27001, HIPAA, GDPR, GxP, and
-            21 CFR Part 11 readiness — certifications will be pursued on a
-            customer-driven timeline.” Never claim a certification the company
-            has not completed.
+            “Yesod AI is designed for GxP intended use, IQ/OQ/PQ qualification,
+            and 21 CFR Part 11-style audit and signing — full qualification is
+            executed and signed on a customer-driven timeline.” Never claim a
+            validation state the company has not actually executed.
           </p>
         </div>
       </div>
@@ -596,7 +597,7 @@ function RoadmapSection() {
           index="08"
           eyebrow="Roadmap"
           title="Four phases, twelve months."
-          description="A defensible sequence: frame the controls, ship the foundation, prove the enterprise posture, then layer in regulated workflow readiness."
+          description="A defensible sequence: frame the validation primitives, ship the auditable foundation, prove operational evidence, then layer in formal qualification and Part 11 depth."
         />
 
         <div className="mt-10">
@@ -618,7 +619,7 @@ function TradeoffsSection() {
           index="09"
           eyebrow="Tradeoffs & intentional omissions"
           title="What we chose not to do — and why."
-          description="The most credible compliance posture is the one that names its limits. Each tradeoff below is a deliberate choice with a defined mitigation."
+          description="The most credible validation posture is the one that names its limits. Each tradeoff below is a deliberate choice with a defined mitigation."
         />
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -680,13 +681,13 @@ function NextStepSection() {
           </div>
 
           <h2 className="mt-5 text-[26px] font-semibold leading-tight text-[#12317B] sm:text-[32px]">
-            Build the control-to-architecture matrix.
+            Build the validation-to-architecture matrix.
           </h2>
           <p className="mt-3 max-w-3xl text-[15px] leading-[1.65] text-[#040404]">
-            One artifact, owned across Engineering, Security, ML, and
-            Compliance. It is the single source of truth that connects every
-            buyer concern to a product feature, an evidence artifact, a
-            priority, and an owner.
+            One artifact, owned across Engineering, ML, QA, and Regulatory.
+            It is the single source of truth that connects every validation
+            concern to a product feature, an evidence artifact, a priority,
+            and an owner.
           </p>
 
           <div className="mt-7">
@@ -696,17 +697,17 @@ function NextStepSection() {
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
             <Outcome
               icon={Building2}
-              title="Sales unblock"
-              body="Answer 80% of vendor questionnaires from a single sheet."
+              title="QA unblock"
+              body="Answer most sponsor and QA validation questions from a single sheet."
             />
             <Outcome
               icon={Boxes}
               title="Engineering focus"
-              body="No ambiguity on which control is must-have vs. later."
+              body="No ambiguity on which validation primitive is must-have vs. later."
             />
             <Outcome
               icon={Database}
-              title="Audit-ready"
+              title="Inspection-ready"
               body="Every row points to the evidence artifact we will produce."
             />
           </div>
