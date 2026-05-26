@@ -7,9 +7,9 @@ export function Drift() {
     <section id="drift" className="bg-white">
       <div className="mx-auto max-w-[1200px] px-6 py-24">
         <SectionHeading
-          eyebrow="Model drift and upstream API updates"
-          title="Drift is the quiet failure mode. Treat material upstream changes as controlled changes."
-          description="Foundation model providers update, deprecate, and re-tune models on their own schedule. A validation-ready system keeps behavior stable where possible and creates a documented re-validation decision when behavior can materially change."
+          eyebrow="Question 4 · Model drift & upstream updates"
+          title="Yes — upstream model drift can invalidate validation. Treat it as a controlled change."
+          description="Foundation-model providers upgrade, deprecate, and silently re-tune models on their own schedule. Without controls, the validated state lapses the moment behavior shifts. The four controls below plus the trigger matrix turn drift into a documented re-validation decision — not a surprise audit finding."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {DRIFT_CONTROLS.map(({ icon: Icon, title, body }) => (

@@ -6,9 +6,9 @@ export function Roadmap() {
     <section id="roadmap" className="bg-white">
       <div className="mx-auto max-w-[1200px] px-6 py-24">
         <SectionHeading
-          eyebrow="Implementation roadmap"
-          title="Build the validation surface progressively, not in a single shock."
-          description="Each phase is sized to be deliverable without halting product work. The point is to compound credibility — every phase is something a customer or auditor can verify."
+          eyebrow="Roadmap · How V1 grows into full qualification"
+          title="Five phases, sequenced so velocity is never traded against credibility."
+          description="Each phase ships something a customer or auditor can verify, without halting product work. Phase 0–1 is the MVP scope. Phase 2 turns primitives into protocol-grade evidence. Phase 3–4 hardens the system once a sponsor or regulatory use case justifies the cost."
         />
 
         <ol className="relative mt-12 space-y-6 border-l-2 border-[#2061AB] pl-8">

@@ -11,9 +11,9 @@ export function ValidationPackage() {
     <section id="package" className="bg-white">
       <div className="mx-auto max-w-[1200px] px-6 py-24">
         <SectionHeading
-          eyebrow="Minimum viable validation package"
-          title="Build validation-ready primitives now. Execute formal validation when the use case requires it."
-          description="A credible MVP should not claim it is fully validated before protocols are executed and signed. It should ship the controls, records, and structures that make formal IQ/OQ/PQ execution practical."
+          eyebrow="Question 5 · Minimum Viable Validation Package"
+          title="Build validation-ready primitives now. Execute formal qualification when the use case requires it."
+          description="An MVP cannot claim it is fully validated, but it can ship the controls, records, and structures that make later IQ/OQ/PQ execution practical. The three columns below are the proposed scope: what to build in V1, what to design now and execute later, and what to defer until a sponsor or regulatory trigger demands it."
         />
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {VALIDATION_PACKAGE_GROUPS.map((group, index) => {

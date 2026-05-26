@@ -9,8 +9,8 @@ export function Scope() {
       <div className="mx-auto max-w-[1200px] px-6 py-24">
         <SectionHeading
           eyebrow="Tradeoffs & MVP scope"
-          title="What to build now, and what to defer without overclaiming validation status."
-          description="The goal at MVP is credibility, not completeness. Ship the validation-ready primitives that make regulated outputs traceable, while clearly separating prepared artifacts from signed qualification evidence."
+          title="What V1 ships, what V1 omits, and the risks the team accepts to keep velocity."
+          description="The MVP goal is credibility, not completeness. The left column is what regulated buyers expect on day one. The right column is intentionally deferred — each item is a real cost we accept now in exchange for shipping speed. The callout below names the risks that deferral creates and how the architecture limits them."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -27,13 +27,39 @@ export function Scope() {
             items={DEFER}
           />
         </div>
-        <div className="mt-8 rounded-card border-l-4 border-[#2061AB] bg-white p-5 shadow-card">
-          <p className="text-[14px] leading-[1.6] text-[#040404]">
-            <span className="font-semibold text-[#12317B]">Positioning:</span>{" "}
-            Yesod can be validation-ready and GxP-aligned before it is fully
-            validated. Full validation status belongs to executed, reviewed, and
-            signed protocols for a defined intended use.
-          </p>
+        <div className="mt-8 grid gap-4 lg:grid-cols-2">
+          <div className="rounded-card border-l-4 border-[#2061AB] bg-white p-5 shadow-card">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#2488D0]">
+              Positioning
+            </p>
+            <p className="mt-2 text-[14px] leading-[1.6] text-[#040404]">
+              Yesod can be validation-ready and GxP-aligned before it is fully
+              validated. Full validation status belongs to executed, reviewed,
+              and signed protocols for a defined intended use.
+            </p>
+          </div>
+          <div className="rounded-card border-l-4 border-[#2488D0] bg-white p-5 shadow-card">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#2488D0]">
+              Risks accepted in V1 — and how the architecture limits them
+            </p>
+            <ul className="mt-2 space-y-2 text-[13px] leading-[1.6] text-[#040404]">
+              <li>
+                <span className="font-semibold text-[#12317B]">No signed VSR yet.</span>{" "}
+                Mitigated by shipping the traceability matrix and evidence
+                export so a sponsor-led VSR can be assembled within weeks.
+              </li>
+              <li>
+                <span className="font-semibold text-[#12317B]">No full Part 11 e-signature module.</span>{" "}
+                Mitigated by attributable reviewer attestation plus append-only
+                audit trail — auditable today, upgradable later.
+              </li>
+              <li>
+                <span className="font-semibold text-[#12317B]">No per-tenant validation environment.</span>{" "}
+                Mitigated by per-release evidence binder and golden-dataset
+                regression that any tenant can re-execute against.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

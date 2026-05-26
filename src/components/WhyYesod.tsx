@@ -6,9 +6,9 @@ export function WhyYesod() {
     <section id="why-yesod" className="bg-white">
       <div className="mx-auto max-w-[1200px] px-6 py-24">
         <SectionHeading
-          eyebrow="Why this matters to Yesod AI"
-          title="Validation is the bridge from good demo to trusted clinical workflow."
-          description="Pharma and CRO buyers do not just evaluate the product. They evaluate whether regulated outputs are traceable, reviewable, reproducible, and controlled over time."
+          eyebrow="Strategic importance"
+          title="Why validation readiness dictates Yesod's adoption and system stability."
+          description="Two forces are at stake. Adoption: pharma, biotech, and CRO buyers will not promote a tool past sandbox without evidence that regulated outputs are reproducible and audit-defensible. Stability: without designed-in versioning, traceability, and drift control, every upstream model or prompt change silently invalidates the system's qualified state."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {WHY_CARDS.map(({ icon: Icon, title, body }) => (

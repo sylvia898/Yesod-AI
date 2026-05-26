@@ -12,9 +12,9 @@ export function IqOqPqTable() {
     <section id="iq-oq-pq" className="bg-white">
       <div className="mx-auto max-w-[1200px] px-6 py-24">
         <SectionHeading
-          eyebrow="Qualification framework"
+          eyebrow="Question 1 · Qualification framework"
           title="IQ, OQ, and PQ — restated for a cloud-native AI SaaS."
-          description="The qualification spine of GxP software still applies, but the evidence you collect changes fundamentally when infrastructure is ephemeral and the system uses an LLM."
+          description="The qualification spine of GxP software still applies, but the evidence you collect changes fundamentally when infrastructure is ephemeral and the system uses an LLM. The table maps each phase to its traditional artifact, its cloud-native AI equivalent, and the evidence the platform must capture automatically."
         />
 
         <div className="mt-12 hidden overflow-hidden rounded-card border border-[rgba(32,97,171,0.18)] bg-white shadow-card lg:block">

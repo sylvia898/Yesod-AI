@@ -7,9 +7,9 @@ export function GxpWorkflow() {
     <section id="gxp" className="bg-white">
       <div className="mx-auto max-w-[1200px] px-6 py-24">
         <SectionHeading
-          eyebrow="GxP in clinical data workflows"
+          eyebrow="Question 2 · GxP in clinical data workflows"
           title="Eight pillars that turn a clinical AI workflow into a regulated system."
-          description="Good Practice expectations translate into concrete engineering capabilities: traceability, reproducibility, access control, audit trails, data lineage, change control, and retained validation evidence."
+          description="GxP — primarily GCP for trial data and GLP for analytical work — expects documented intent, qualified behavior, attributable actions, and reconstructable outputs. For SDTM, ADaM, and TLF workflows, that translates into eight engineering capabilities. The traceability example below walks a single regulated output backward through every pillar."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {GXP_PILLARS.map(({ icon: Icon, title, body }) => (

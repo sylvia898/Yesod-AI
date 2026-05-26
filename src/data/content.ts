@@ -42,15 +42,15 @@ export const HERO = {
   subtitle:
     "GxP, IQ/OQ/PQ, audit evidence, and LLM drift control for a cloud-native AI SaaS platform.",
   thesis:
-    "A clinical AI platform becomes validation-ready when intended use, qualification evidence, traceability, audit records, and human review are designed into the product — not retrofitted before an inspection.",
+    "Clinical AI software cannot just be deployed — it must be validated to produce reproducible, traceable, audit-defensible outputs. A platform becomes validation-ready when intended use, qualification evidence, traceability, audit records, and human review are designed in, not retrofitted before an inspection.",
   summary:
-    "The goal is not to overclaim validation. It is to ship GxP-aligned primitives that make every regulated output reproducible, reviewable, and traceable from day one.",
+    "This brief answers five questions: what IQ/OQ/PQ mean for a cloud-native AI SaaS, how GxP applies to clinical programming, how LLMs add validation complexity, how upstream model drift is handled, and what a Minimum Viable Validation Package looks like.",
   bullets: [
-    "Define intended use before claiming regulated workflow support",
-    "Tie URS and FRS to IQ/OQ/PQ evidence",
-    "Version prompts, models, datasets, and retrieval snapshots",
-    "Require reviewer attestation before regulated output approval",
-    "Treat material model, prompt, and schema changes as controlled changes",
+    "Q1 — IQ/OQ/PQ restated for cloud-native AI SaaS",
+    "Q2 — GxP applied to SDTM, ADaM, and TLF workflows",
+    "Q3 — LLM-specific validation complexity and controls",
+    "Q4 — Model drift handled as controlled change",
+    "Q5 — Minimum Viable Validation Package scope",
   ],
 };
 

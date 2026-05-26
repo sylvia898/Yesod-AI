@@ -6,9 +6,9 @@ export function Problem() {
     <section id="problem" className="bg-white">
       <div className="mx-auto max-w-[1200px] px-6 py-24">
         <SectionHeading
-          eyebrow="Problem overview"
-          title="Regulated clinical software cannot just be deployed."
-          description="Clinical programming workflows operate on CDISC SDTM and ADaM data and produce Tables, Listings, and Figures that support regulatory decisions. An AI SaaS that touches this surface inherits decades of expectations: documented intent, qualified behavior, traceable changes, and durable audit evidence — plus a new set of risks unique to large language models."
+          eyebrow="Topic overview · Core problem"
+          title="Clinical AI software cannot just be deployed — it must be validated."
+          description="An AI SaaS that touches CDISC SDTM, ADaM, or TLF generation inherits decades of GxP expectations: documented intent, qualified behavior, traceable changes, and durable audit evidence. LLMs add a new failure surface — non-determinism, prompt edits, retrieval churn, and upstream model drift — that traditional CSV does not address. The brief defines the problem and frames the rest of the deck."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {PROBLEM_CARDS.map(({ icon: Icon, title, body }) => (
