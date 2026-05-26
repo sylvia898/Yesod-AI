@@ -150,6 +150,109 @@ export const WHY_CARDS: WhyCard[] = [
   },
 ];
 
+export type AdoptionGate = {
+  stage: string;
+  decider: string;
+  question: string;
+  required: string;
+  blocker: string;
+};
+
+export const ADOPTION_GATES: AdoptionGate[] = [
+  {
+    stage: "Sandbox / discovery",
+    decider: "Innovation or data-science lead",
+    question: "Does the AI produce useful drafts on representative inputs?",
+    required: "Working demo on de-identified data.",
+    blocker: "Demo alone — no validation required at this stage.",
+  },
+  {
+    stage: "Pilot inside a study",
+    decider: "Clinical QA + clinical operations",
+    question: "Can we use these outputs in a real study without creating audit risk?",
+    required:
+      "Intended use, URS, golden dataset, append-only audit log, reviewer attestation, evidence export.",
+    blocker:
+      "Most AI tools stall here. Without validation-ready primitives, pilots stay sandboxed indefinitely.",
+  },
+  {
+    stage: "Production for regulated outputs",
+    decider: "QA + regulatory affairs",
+    question: "Will an inspector accept this system as part of our quality system?",
+    required:
+      "Executed IQ/OQ/PQ, traceability matrix, signed Validation Summary Report, controlled change process.",
+    blocker:
+      "Without designed-in traceability, IQ/OQ/PQ execution becomes a rebuild — not a documentation task.",
+  },
+  {
+    stage: "Scale across studies & sponsors",
+    decider: "Sponsor QA + procurement",
+    question: "Can this tool be qualified once and reused across our portfolio?",
+    required:
+      "Per-tenant validation environment, ongoing drift monitoring, customer-runnable golden cases.",
+    blocker:
+      "Without a per-release evidence binder, every new sponsor restarts qualification from zero.",
+  },
+];
+
+export type StabilityScenario = {
+  trigger: string;
+  without: string;
+  withControls: string;
+};
+
+export const STABILITY_SCENARIOS: StabilityScenario[] = [
+  {
+    trigger: "Provider auto-upgrades the foundation model overnight.",
+    without:
+      "Outputs shift silently. Prior runs cannot be reproduced. The qualified state has lapsed before anyone notices.",
+    withControls:
+      "Pinned deployment IDs + provider-notice monitoring fire a drift trigger. Change record, golden re-run, and a documented re-validation decision follow.",
+  },
+  {
+    trigger: "An engineer ships a 5-word prompt template edit.",
+    without:
+      "Validated behavior changes without a visible software release marker. Reviewers cannot tell which version produced last week's draft.",
+    withControls:
+      "Prompts versioned as controlled artifacts. Change review + prompt regression suite gate the merge. The change is traceable and reversible.",
+  },
+  {
+    trigger: "Upstream ADaM schema renames a variable.",
+    without:
+      "Derivation logic silently breaks. TLF drafts look plausible but reference the wrong column. The error is found in audit, not in CI.",
+    withControls:
+      "Schema contract validation at ingest blocks the run. An OQ delta test surfaces the impact and routes a controlled change.",
+  },
+];
+
+export type InactionCost = {
+  area: string;
+  consequence: string;
+};
+
+export const COST_OF_INACTION: InactionCost[] = [
+  {
+    area: "Sales",
+    consequence:
+      "Pilots stall at the QA gate with the verdict 'interesting tool, not validated.'",
+  },
+  {
+    area: "Adoption",
+    consequence:
+      "Programmers cannot use AI output for regulatory deliverables — usage is capped at the sandbox.",
+  },
+  {
+    area: "Audit",
+    consequence:
+      "A single inspection finding tied to AI use can propagate across the sponsor's entire portfolio.",
+  },
+  {
+    area: "Engineering",
+    consequence:
+      "Retrofitting validation later means rebuilding the data model, not adding documents at the end.",
+  },
+];
+
 export type IqOqPqRow = {
   phase: "IQ" | "OQ" | "PQ";
   name: string;
