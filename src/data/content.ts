@@ -29,11 +29,11 @@ export const NAV_LINKS: NavLink[] = [
   { path: "/llm-risk", label: "LLM" },
   { path: "/drift", label: "Drift" },
   { path: "/package", label: "Package" },
-  { path: "/architecture", label: "Arch" },
+  { path: "/architecture", label: "Architecture" },
   { path: "/roadmap", label: "Roadmap" },
   { path: "/scope", label: "Scope" },
-  { path: "/next-step", label: "Next" },
-  { path: "/references", label: "Refs" },
+  { path: "/next-step", label: "Next Steps" },
+  { path: "/references", label: "References" },
 ];
 
 export const HERO = {

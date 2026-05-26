@@ -15,7 +15,19 @@ export function ValidationPackage() {
           title="Build validation-ready primitives now. Execute formal qualification when the use case requires it."
           description="An MVP cannot claim it is fully validated, but it can ship the controls, records, and structures that make later IQ/OQ/PQ execution practical. The three columns below are the proposed scope: what to build in V1, what to design now and execute later, and what to defer until a sponsor or regulatory trigger demands it."
         />
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+
+        <div className="mt-8 rounded-card border-l-4 border-[#2488D0] bg-white p-5 shadow-card">
+          <p className="text-[14px] leading-[1.6] text-[#040404]">
+            <span className="font-semibold text-[#12317B]">
+              Important message:
+            </span>{" "}
+            do not claim the product is fully validated before protocols are
+            actually executed and signed. Say "validation-ready" or
+            "GxP-aligned primitives" until the evidence exists.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-6 lg:grid-cols-3">
           {VALIDATION_PACKAGE_GROUPS.map((group, index) => {
             const Icon = icons[index];
             return (
@@ -61,17 +73,6 @@ export function ValidationPackage() {
               </article>
             );
           })}
-        </div>
-
-        <div className="mt-8 rounded-card border-l-4 border-[#2488D0] bg-white p-5 shadow-card">
-          <p className="text-[14px] leading-[1.6] text-[#040404]">
-            <span className="font-semibold text-[#12317B]">
-              Important message:
-            </span>{" "}
-            do not claim the product is fully validated before protocols are
-            actually executed and signed. Say "validation-ready" or
-            "GxP-aligned primitives" until the evidence exists.
-          </p>
         </div>
       </div>
     </section>
