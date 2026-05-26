@@ -37,20 +37,20 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const HERO = {
-  eyebrow: "Yesod AI · Topic B",
+  eyebrow: "Software Validation Brief",
   title: "Software Validation for AI Clinical Programming",
   subtitle:
-    "GxP, IQ/OQ/PQ, audit evidence, and LLM drift management for a cloud-native AI SaaS platform.",
+    "GxP, IQ/OQ/PQ, audit evidence, and LLM drift control for a cloud-native AI SaaS platform.",
   thesis:
-    "An AI clinical programming platform is not validation-ready because it has a good demo. It becomes validation-ready when intended use, requirements, qualification evidence, traceability, audit records, human review, and change control are designed into the product.",
+    "A clinical AI platform becomes validation-ready when intended use, qualification evidence, traceability, audit records, and human review are designed into the product — not retrofitted before an inspection.",
   summary:
-    "The practical goal is not to overclaim validation status. The goal is to build GxP-aligned primitives that make every regulated output reproducible, reviewable, and traceable.",
+    "The goal is not to overclaim validation. It is to ship GxP-aligned primitives that make every regulated output reproducible, reviewable, and traceable from day one.",
   bullets: [
     "Define intended use before claiming regulated workflow support",
-    "Tie URS and FRS to IQ/OQ/PQ evidence and audit records",
-    "Version prompts, models, datasets, retrieval snapshots, and test cases",
-    "Require programmer or reviewer attestation before regulated output approval",
-    "Treat material model, prompt, schema, and retrieval changes as controlled changes",
+    "Tie URS and FRS to IQ/OQ/PQ evidence",
+    "Version prompts, models, datasets, and retrieval snapshots",
+    "Require reviewer attestation before regulated output approval",
+    "Treat material model, prompt, and schema changes as controlled changes",
   ],
 };
 
@@ -65,25 +65,25 @@ export const PROBLEM_CARDS: ProblemCard[] = [
     icon: Database,
     title: "Clinical outputs carry evidence obligations",
     body:
-      "SDTM and ADaM datasets feed Tables, Listings, and Figures used in clinical decisions and submissions. A reviewer must be able to reconstruct how a draft was produced.",
+      "SDTM and ADaM feed the Tables, Listings, and Figures that support clinical decisions. A reviewer must be able to reconstruct how any draft was produced.",
   },
   {
     icon: ClipboardCheck,
     title: "CSV starts with intended use",
     body:
-      "Computer System Validation (CSV) is not a post-demo checklist. It starts by defining what the system is intended to do, then proving the system performs that use reliably.",
+      "Validation is not a post-demo checklist. It begins with what the system is for, then proves it performs that use reliably.",
   },
   {
     icon: Sparkles,
     title: "LLMs change the evidence model",
     body:
-      "Probabilistic outputs, prompt changes, retrieval snapshots, and provider updates add versioned inputs that traditional deterministic validation does not always capture.",
+      "Probabilistic outputs, prompt edits, retrieval snapshots, and provider updates add versioned inputs that deterministic validation does not cover.",
   },
   {
     icon: History,
     title: "Audit evidence is a product feature",
     body:
-      "The platform needs durable records of dataset version, prompt version, model version, retrieval context, output hash, reviewer decision, timestamp, and linked requirement.",
+      "Every regulated output needs a durable record: dataset, prompt, model, retrieval context, output hash, reviewer, decision, timestamp, requirement.",
   },
 ];
 
@@ -97,27 +97,27 @@ export type EvidenceLens = {
 export const COMPLIANCE_LENSES: EvidenceLens[] = [
   {
     icon: ShieldCheck,
-    title: "Validation-ready does not mean fully validated",
+    title: "Validation-ready ≠ fully validated",
     signal:
-      "A product can ship the primitives required for validation before a customer executes and signs formal protocols.",
+      "Ship the primitives that make validation possible; let customers execute and sign the formal protocols.",
     body:
-      "Use precise language: GxP-aligned, validation-ready, qualified workflow candidate, or audit-defensible. Do not claim a completed validation state before execution evidence exists.",
+      "Use precise language — GxP-aligned, validation-ready, audit-defensible — and never claim a state that has not been executed.",
   },
   {
     icon: GitBranch,
-    title: "Traceability must be designed in",
+    title: "Traceability is a design problem",
     signal:
-      "A regulated output should walk backward from approved TLF draft to human review, AI output, test case, requirement, and intended use.",
+      "An approved output should walk backward to review, AI output, test, requirement, and intended use.",
     body:
-      "This is a data model and workflow design problem, not a documentation task saved for the end of the release.",
+      "This is a data model and workflow choice — not a documentation task saved for the end of the release.",
   },
   {
     icon: UserCheck,
     title: "Human review is a control",
     signal:
-      "For regulated clinical programming, AI assistance should not silently become an approved deliverable.",
+      "AI assistance must not silently become an approved deliverable.",
     body:
-      "The reviewer decision, edits, rationale, identity, and timestamp become part of the evidence record for each output.",
+      "Reviewer identity, decision, edits, rationale, and timestamp belong in the evidence record for every output.",
   },
 ];
 
@@ -128,25 +128,25 @@ export const WHY_CARDS: WhyCard[] = [
     icon: ShieldCheck,
     title: "Enterprise trust",
     body:
-      "Pharma and CRO buyers need evidence that the platform can support regulated workflows without creating untraceable outputs.",
+      "Pharma and CRO buyers need evidence the platform supports regulated workflows without producing untraceable outputs.",
   },
   {
     icon: LineChart,
     title: "Adoption inside clinical programming",
     body:
-      "A strong validation story moves Yesod from sandbox demo to controlled SDTM, ADaM, and TLF workflows where programmers can actually use it.",
+      "A credible validation story moves Yesod from sandbox demo to controlled SDTM, ADaM, and TLF workflows.",
   },
   {
     icon: FileSignature,
     title: "Audit and procurement confidence",
     body:
-      "QA reviewers look for intended use, requirements, qualification evidence, traceability, and change control before they trust an AI-generated deliverable.",
+      "QA looks for intended use, requirements, qualification evidence, traceability, and change control before trusting an AI-generated deliverable.",
   },
   {
     icon: AlertTriangle,
     title: "AI-specific risk",
     body:
-      "Reproducibility, hallucination, upstream model drift, and retrieval churn require controls that are visible in the product and in the evidence export.",
+      "Reproducibility, hallucination, model drift, and retrieval churn need controls visible in the product and in the evidence export.",
   },
 ];
 
@@ -209,37 +209,37 @@ export const GXP_PILLARS: GxpPillar[] = [
     icon: GitBranch,
     title: "Traceability",
     body:
-      "Every regulated output links to the requirement, dataset version, prompt, model, retrieval snapshot, test evidence, and reviewer.",
+      "Every output links back to requirement, dataset, prompt, model, retrieval snapshot, test evidence, and reviewer.",
   },
   {
     icon: Repeat,
     title: "Reproducibility",
     body:
-      "A prior run can be replayed or explained because inputs, versions, parameters, outputs, and changes are retained.",
+      "A prior run can be replayed because inputs, versions, parameters, and outputs are retained.",
   },
   {
     icon: UserCheck,
     title: "Role-based review",
     body:
-      "Programmer, reviewer, QA, and admin actions are separated and captured with identity and decision meaning.",
+      "Programmer, reviewer, QA, and admin actions are separated and recorded with identity and intent.",
   },
   {
     icon: History,
     title: "Audit trails",
     body:
-      "Append-only, time-stamped records show who did what, when, with which input, model, prompt, and output.",
+      "Append-only, time-stamped records of who did what, when, with which inputs, model, prompt, and output.",
   },
   {
     icon: Layers,
     title: "Version control",
     body:
-      "Code, prompts, datasets, retrieval indices, requirements, and test cases are versioned and pinned per release.",
+      "Code, prompts, datasets, retrieval indices, requirements, and test cases are versioned per release.",
   },
   {
     icon: Network,
     title: "Data lineage",
     body:
-      "Source-to-deliverable lineage connects SDTM, ADaM, derivations, TLF drafts, and approved outputs.",
+      "End-to-end lineage from SDTM and ADaM through derivations to approved TLF drafts.",
   },
   {
     icon: Workflow,
@@ -251,7 +251,7 @@ export const GXP_PILLARS: GxpPillar[] = [
     icon: ClipboardCheck,
     title: "Validation evidence",
     body:
-      "URS, FRS, risk assessment, IQ/OQ/PQ protocols, test results, and known limitations are retained as controlled artifacts.",
+      "URS, FRS, risk, IQ/OQ/PQ, test results, and known limitations retained as controlled artifacts.",
   },
 ];
 
@@ -365,63 +365,63 @@ export const LLM_RISKS: LlmRisk[] = [
     icon: Sparkles,
     title: "Nondeterministic output",
     risk: "Same input can produce materially different text or code.",
-    why: "A reviewer cannot defend a result if the platform cannot explain why this exact output was generated.",
+    why: "A reviewer cannot defend a result the platform cannot explain.",
     control:
-      "Use low temperature, structured outputs, stable evaluation settings, and mandatory capture of raw output.",
-    evidence: "Run record, output hash, evaluation diff, and reviewer decision.",
+      "Low temperature, structured outputs, stable eval settings, and mandatory raw-output capture.",
+    evidence: "Run record, output hash, evaluation diff, reviewer decision.",
   },
   {
     icon: FileSignature,
-    title: "Prompt/template changes",
+    title: "Prompt / template changes",
     risk: "A prompt edit changes behavior without a visible software release.",
-    why: "Prompt templates are executable workflow logic for an AI system.",
+    why: "Prompts are executable workflow logic for an AI system.",
     control:
-      "Version prompts as controlled artifacts, require review, and run prompt regression tests.",
+      "Version prompts as controlled artifacts; require review; run prompt regression tests.",
     evidence: "Prompt version manifest, change ticket, regression report.",
   },
   {
     icon: Boxes,
-    title: "Model/provider API updates",
-    risk: "Provider updates or deprecations shift behavior on the same workflow.",
+    title: "Model / provider updates",
+    risk: "Provider upgrades or deprecations shift behavior on the same workflow.",
     why: "Upstream behavior can change even if Yesod code does not.",
     control:
-      "Route calls through a model gateway, pin deployment IDs where possible, and monitor provider notices.",
+      "Model gateway, pinned deployment IDs, provider-notice monitoring.",
     evidence: "Model manifest, provider change log, re-validation decision.",
   },
   {
     icon: Database,
-    title: "Retrieval/index changes",
+    title: "Retrieval / index changes",
     risk: "Rechunking or refreshing a knowledge base changes retrieved context.",
-    why: "The AI answer depends on the retrieved evidence, not only the prompt.",
+    why: "The AI answer depends on retrieved evidence, not only the prompt.",
     control:
-      "Version retrieval indices, snapshot per release, and re-run golden cases after corpus changes.",
+      "Version retrieval indices; snapshot per release; rerun golden cases after corpus changes.",
     evidence: "Retrieval snapshot ID, index diff, golden-case result.",
   },
   {
     icon: Layers,
-    title: "Dataset/schema changes",
-    risk: "SDTM or ADaM-like schema changes break derivation assumptions.",
-    why: "Clinical programming logic depends on variable definitions, controlled terminology, and derivation rules.",
+    title: "Dataset / schema changes",
+    risk: "SDTM or ADaM schema changes break derivation assumptions.",
+    why: "Clinical logic depends on variable definitions, terminology, and derivation rules.",
     control:
-      "Validate schema at ingest, maintain data contracts, and require re-checks on schema bumps.",
-    evidence: "Schema validation report, data contract version, failed/passed gate.",
+      "Validate schema at ingest; maintain data contracts; require re-checks on schema bumps.",
+    evidence: "Schema validation report, data contract version, gate result.",
   },
   {
     icon: AlertTriangle,
     title: "Hallucinated output",
-    risk: "The model invents unsupported values, citations, or derivation explanations.",
-    why: "A plausible unsupported statement can become a regulated data-integrity issue.",
+    risk: "The model invents unsupported values, citations, or explanations.",
+    why: "A plausible unsupported claim becomes a regulated data-integrity issue.",
     control:
-      "Ground claims in source data or retrieval evidence, flag unsupported assertions, and require human review.",
+      "Ground claims in source data or retrieval; flag unsupported assertions; require human review.",
     evidence: "Source linkage, reviewer edits, exception report.",
   },
   {
     icon: UserCheck,
     title: "Human review gaps",
-    risk: "An AI draft is approved without accountable clinical programmer review.",
+    risk: "An AI draft is approved without accountable clinical-programmer review.",
     why: "Human attestation is the key control for AI-assisted regulated outputs.",
     control:
-      "Enforce review gates, capture reviewer identity, decision, edits, and rationale.",
+      "Enforce review gates; capture reviewer identity, decision, edits, and rationale.",
     evidence: "Reviewer attestation, edit diff, approval timestamp.",
   },
   {
@@ -430,7 +430,7 @@ export const LLM_RISKS: LlmRisk[] = [
     risk: "A past output cannot be reconstructed because context was not retained.",
     why: "Auditors may ask to replay the path from input to approved output months later.",
     control:
-      "Persist versions, parameters, inputs, retrieval snapshot, raw output, reviewed output, and hash.",
+      "Persist versions, parameters, inputs, retrieval snapshot, raw and reviewed outputs, and hash.",
     evidence: "Audit replay packet and evidence export.",
   },
 ];
@@ -792,7 +792,7 @@ export const ROADMAP: Phase[] = [
 
 export const MUST_HAVE: string[] = [
   "Intended use and workflow boundaries",
-  "URS and FRS draft tied to Topic B use cases",
+  "URS and FRS draft tied to regulated clinical-programming use cases",
   "Prompt/model/dataset/retrieval versioning",
   "Append-only audit trail for every inference and review",
   "Reviewer attestation before regulated output approval",
@@ -809,101 +809,106 @@ export const DEFER: string[] = [
   "Advanced automated re-validation across every corpus/model change",
 ];
 
-export type PresentationStep = {
-  label: string;
-  time: string;
-  focus: string;
-};
-
-export const PRESENTATION_FLOW: PresentationStep[] = [
-  {
-    label: "Overview",
-    time: "2-3 min",
-    focus: "Thesis and regulated clinical workflow context",
-  },
-  {
-    label: "Strategic importance",
-    time: "4-5 min",
-    focus: "Why validation readiness affects adoption and audit confidence",
-  },
-  {
-    label: "Proposed approach",
-    time: "7-8 min",
-    focus: "IQ/OQ/PQ, traceability, audit replay, LLM risk, drift controls",
-  },
-  {
-    label: "Tradeoffs & MVP scope",
-    time: "3-4 min",
-    focus: "Build now, prepare now, defer until sponsor trigger",
-  },
-  {
-    label: "Tactical next step",
-    time: "1 min",
-    focus: "Intended use plus golden validation dataset",
-  },
-];
-
-export type ReferenceItem = { title: string; note: string };
+export type ReferenceItem = { title: string; note: string; url?: string };
 
 export const REFERENCES: { category: string; items: ReferenceItem[] }[] = [
   {
-    category: "FDA 21 CFR Part 11",
+    category: "FDA · electronic records & CSA",
     items: [
       {
-        title: "Electronic Records; Electronic Signatures",
-        note: "Add official FDA source link here.",
+        title: "21 CFR Part 11 — Electronic Records; Electronic Signatures",
+        note: "Authoritative U.S. rule for trustworthy electronic records and signatures in regulated activities.",
+        url: "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-11",
       },
       {
-        title: "Computer Software Assurance guidance",
-        note: "Add official FDA guidance link here.",
+        title: "FDA — Computer Software Assurance for Production and Quality System Software",
+        note: "Final guidance reframing CSV as risk-based assurance; underpins the validation-ready posture.",
+        url: "https://www.fda.gov/media/188844/download",
+      },
+      {
+        title: "FDA — Artificial Intelligence/Machine Learning Software as a Medical Device Action Plan",
+        note: "FDA direction on lifecycle management for AI/ML-based clinical software; informs LLM drift controls.",
+        url: "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-software-medical-device",
       },
     ],
   },
   {
-    category: "GAMP 5",
+    category: "ISPE GAMP 5",
     items: [
       {
-        title: "ISPE GAMP 5 Second Edition - risk-based validation approach",
-        note: "Add official ISPE source link here.",
+        title: "ISPE GAMP 5 (Second Edition) — A Risk-Based Approach to Compliant GxP Computerized Systems",
+        note: "Industry-standard validation framework used to scope IQ/OQ/PQ depth by system category.",
+        url: "https://ispe.org/publications/guidance-documents/gamp-5-guide-2nd-edition",
+      },
+      {
+        title: "ISPE GAMP — Records and Data Integrity Good Practice Guide",
+        note: "Practical guidance for designing audit trails and evidence retention to ALCOA+ standards.",
+        url: "https://ispe.org/publications/guidance-documents/gamp-records-pharmaceutical-data-integrity",
       },
     ],
   },
   {
-    category: "ICH GCP and quality risk management",
+    category: "ICH guidance",
     items: [
       {
-        title: "ICH E6(R3) Good Clinical Practice",
-        note: "Add official ICH source link here.",
+        title: "ICH E6(R3) — Good Clinical Practice",
+        note: "Current GCP framework; emphasizes computerized system validation, data integrity, and oversight.",
+        url: "https://www.ich.org/page/efficacy-guidelines",
       },
       {
-        title: "ICH Q9(R1) Quality Risk Management",
-        note: "Add official ICH source link here.",
+        title: "ICH Q9(R1) — Quality Risk Management",
+        note: "Foundational risk-management methodology cited in our risk assessment approach.",
+        url: "https://www.ich.org/page/quality-guidelines",
       },
     ],
   },
   {
-    category: "CDISC SDTM / ADaM",
+    category: "CDISC standards",
     items: [
       {
         title: "CDISC SDTM Implementation Guide",
-        note: "Add official CDISC source link here.",
+        note: "Study Data Tabulation Model — the input schema assumed for ingest and TLF derivation.",
+        url: "https://www.cdisc.org/standards/foundational/sdtm",
       },
       {
         title: "CDISC ADaM Implementation Guide",
-        note: "Add official CDISC source link here.",
+        note: "Analysis Data Model — the derived dataset structure feeding Tables, Listings, and Figures.",
+        url: "https://www.cdisc.org/standards/foundational/adam",
       },
     ],
   },
   {
-    category: "Audit evidence and data integrity",
+    category: "Data integrity & audit trails",
     items: [
       {
-        title: "ALCOA+ data integrity principles",
-        note: "Add official regulator or industry source link here.",
+        title: "MHRA — 'GxP' Data Integrity Definitions and Guidance for Industry",
+        note: "Source of the ALCOA+ principles referenced throughout the audit evidence design.",
+        url: "https://www.gov.uk/government/publications/guidance-on-gxp-data-integrity",
       },
       {
-        title: "Audit trail review and electronic record guidance",
-        note: "Add official source link here.",
+        title: "WHO TRS 1033 Annex 4 — Guideline on Data Integrity",
+        note: "Globally applicable principles for trustworthy records across the GxP lifecycle.",
+        url: "https://www.who.int/publications/m/item/annex-4-trs-1033",
+      },
+      {
+        title: "PIC/S PI 041 — Good Practices for Data Management and Integrity",
+        note: "Inspector-facing expectations for electronic records, audit trails, and review workflows.",
+        url: "https://picscheme.org/en/publications",
+      },
+    ],
+  },
+  {
+    category: "AI/LLM validation context",
+    items: [
+      {
+        title: "NIST AI Risk Management Framework (AI RMF 1.0)",
+        note: "Risk taxonomy and lifecycle controls applied to the LLM drift and reproducibility controls.",
+        url: "https://www.nist.gov/itl/ai-risk-management-framework",
+      },
+      {
+        title: "EMA — Reflection Paper on the Use of AI in the Medicinal Product Lifecycle",
+        note: "Regulator perspective on AI use across clinical development; supports intended-use scoping.",
+        url: "https://www.ema.europa.eu/en/documents/scientific-guideline/draft-reflection-paper-use-artificial-intelligence-ai-medicinal-product-lifecycle_en.pdf",
       },
     ],
   },

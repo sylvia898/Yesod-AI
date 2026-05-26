@@ -1,7 +1,6 @@
 import { CheckCircle2, ShieldCheck } from "lucide-react";
 import { HERO } from "../data/content";
 import { Link } from "../router";
-import { PresenterNotes } from "./PresenterNotes";
 
 export function Hero() {
   return (
@@ -64,7 +63,6 @@ export function Hero() {
               ))}
             </ul>
           </aside>
-          <PresenterNotes />
         </div>
       </div>
     </section>

@@ -8,8 +8,8 @@ export function References() {
       <div className="mx-auto max-w-[1200px] px-6 py-24">
         <SectionHeading
           eyebrow="References"
-          title="Sources to add to the final brief."
-          description="Placeholder categories with official links to be inserted before the presentation."
+          title="Source material informing this brief."
+          description="Regulatory guidance, industry standards, and risk-management frameworks cited across the validation, audit, and LLM-drift sections."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {REFERENCES.map((group) => (
@@ -21,20 +21,34 @@ export function References() {
                 {group.category}
               </h3>
               <ul className="mt-4 space-y-3">
-                {group.items.map((item) => (
-                  <li
-                    key={item.title}
-                    className="rounded-lg border border-dashed border-[rgba(32,97,171,0.30)] p-3"
-                  >
-                    <div className="flex items-start gap-2 text-[14px] font-medium text-[#12317B]">
-                      <ExternalLink className="mt-0.5 h-4 w-4 flex-none text-[#2061AB]" />
-                      <span>{item.title}</span>
-                    </div>
-                    <p className="mt-1 pl-6 text-[12px] italic text-[#040404]/70">
-                      {item.note}
-                    </p>
-                  </li>
-                ))}
+                {group.items.map((item) => {
+                  const Title = item.url ? (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#12317B] underline decoration-[#2488D0]/40 underline-offset-2 transition hover:decoration-[#2488D0]"
+                    >
+                      {item.title}
+                    </a>
+                  ) : (
+                    <span className="text-[#12317B]">{item.title}</span>
+                  );
+                  return (
+                    <li
+                      key={item.title}
+                      className="rounded-lg border border-[rgba(32,97,171,0.18)] p-3"
+                    >
+                      <div className="flex items-start gap-2 text-[14px] font-medium">
+                        <ExternalLink className="mt-0.5 h-4 w-4 flex-none text-[#2061AB]" />
+                        {Title}
+                      </div>
+                      <p className="mt-1 pl-6 text-[12px] leading-[1.5] text-[#040404]/75">
+                        {item.note}
+                      </p>
+                    </li>
+                  );
+                })}
               </ul>
             </article>
           ))}
