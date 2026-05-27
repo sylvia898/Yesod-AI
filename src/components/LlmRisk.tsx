@@ -13,7 +13,7 @@ export function LlmRisk() {
         <SectionHeading
           eyebrow="Question 3 · LLM validation complexity"
           title="LLMs add a second control plane on top of IQ/OQ/PQ."
-          description="Traditional Computer System Validation assumes deterministic, frozen software. LLMs are neither: outputs vary, prompts evolve, providers update models, and retrieval context shifts. Each failure mode below is paired with a concrete product control and the evidence artifact the platform must produce — turning AI risk into a managed surface rather than an open question."
+          description="Traditional Computer System Validation assumes deterministic, frozen software. LLMs are neither: outputs vary, prompts evolve, providers update models, and retrieval context shifts."
         />
 
         <div

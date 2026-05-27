@@ -8,7 +8,7 @@ export function Problem() {
         <SectionHeading
           eyebrow="Topic overview · Core problem"
           title="Clinical AI software cannot just be deployed — it must be validated."
-          description="AI SaaS touching CDISC SDTM, ADaM, or TLF generation inherits GxP expectations: documented intent, qualified behavior, traceable changes, durable audit evidence. LLMs add failure modes — non-determinism, prompt edits, retrieval churn, model drift — that traditional Computer System Validation doesn't cover."
+          description="AI SaaS touching SDTM, ADaM, or TLF generation inherits GxP expectations. LLMs add failure modes — non-determinism, prompt edits, retrieval churn, model drift — beyond traditional Computer System Validation."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {PROBLEM_CARDS.map(({ icon: Icon, title, body }) => (

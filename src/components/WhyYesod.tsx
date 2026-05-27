@@ -14,7 +14,7 @@ export function WhyYesod() {
         <SectionHeading
           eyebrow="Strategic importance"
           title="Why validation readiness dictates Yesod's adoption and system stability."
-          description="Two forces matter. Adoption: pharma, biotech, and CRO buyers won't promote a tool past sandbox without evidence regulated outputs are reproducible and audit-defensible. Stability: without designed-in versioning, traceability, and drift control, every upstream model or prompt change silently invalidates the qualified state."
+          description="Two forces matter. Adoption: regulated buyers won't promote a tool past sandbox without audit-defensible outputs. Stability: without versioning, traceability, and drift control, every upstream change silently invalidates the qualified state."
         />
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2">

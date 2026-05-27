@@ -42,16 +42,9 @@ export const HERO = {
   subtitle:
     "GxP, IQ/OQ/PQ, audit evidence, and LLM drift control for a cloud-native AI SaaS platform.",
   thesis:
-    "Clinical AI software cannot just be deployed — it must be validated to produce reproducible, traceable, audit-defensible outputs. Validation readiness requires intended use, qualification evidence, traceability, audit records, and human review designed in from the start.",
+    "Clinical AI software cannot just be deployed — it must be validated to produce reproducible, traceable, audit-defensible outputs.",
   summary:
     "This brief answers five questions: what IQ/OQ/PQ mean for a cloud-native AI SaaS, how GxP applies to clinical programming, how LLMs add validation complexity, how upstream model drift is handled, and what a Minimum Viable Validation Package looks like.",
-  bullets: [
-    "Q1 — IQ/OQ/PQ restated for cloud-native AI SaaS",
-    "Q2 — GxP applied to SDTM, ADaM, and TLF workflows",
-    "Q3 — LLM-specific validation complexity and controls",
-    "Q4 — Model drift handled as controlled change",
-    "Q5 — Minimum Viable Validation Package scope",
-  ],
 };
 
 export type ProblemCard = {

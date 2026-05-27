@@ -13,7 +13,7 @@ export function ValidationPackage() {
         <SectionHeading
           eyebrow="Question 5 · Minimum Viable Validation Package"
           title="Build validation-ready primitives now. Execute formal qualification when the use case requires it."
-          description="An MVP cannot claim full validation, but it can ship the controls, records, and structures that make later IQ/OQ/PQ execution practical. The three columns are the proposed scope: build in V1, design now and execute later, or defer until a sponsor or regulatory trigger demands it."
+          description="An MVP cannot claim full validation, but it can ship the controls, records, and structures that make later IQ/OQ/PQ execution practical."
         />
 
         <div className="mt-8 rounded-card border-l-4 border-[#2488D0] bg-white p-5 shadow-card">
