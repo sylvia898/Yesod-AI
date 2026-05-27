@@ -40,7 +40,7 @@ export function ArchitectureFlow() {
         <SectionHeading
           eyebrow="Proposed architecture / evidence flow"
           title="A controlled path from clinical request to audit evidence."
-          description="The architecture goal is simple: no regulated output is approved without identity, versioned inputs, controlled AI execution, human review, and an evidence record that can be replayed later."
+          description="The architecture goal is simple: no regulated output is approved without identity, versioned inputs, controlled AI execution, human review, and a replayable evidence record."
         />
 
         <p className="mt-6 text-[13px] text-[#040404]/70">

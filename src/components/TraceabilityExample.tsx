@@ -22,9 +22,9 @@ export function TraceabilityExample() {
               One requirement, one complete evidence chain.
             </h3>
             <p className="mt-2 max-w-3xl text-[14px] leading-[1.6] text-[#040404]">
-              The goal is for a reviewer to start at an approved TLF draft and
-              walk backward through requirements, tests, AI output, human review,
-              and audit evidence without a missing link.
+              A reviewer should start at an approved TLF draft and walk backward
+              through requirements, tests, AI output, human review, and audit
+              evidence without a missing link.
             </p>
           </div>
         </div>
@@ -93,7 +93,7 @@ export function TraceabilityExample() {
 
         <EvidenceCard
           title="run_2026_00128"
-          description="A compact record like this is what turns an AI-assisted clinical programming run into something replayable and reviewable."
+          description="A compact record like this turns an AI-assisted clinical programming run into something replayable and reviewable."
           fields={SAMPLE_AUDIT_RECORD}
         />
       </div>

@@ -39,8 +39,8 @@ export function NextStep() {
               <span className="font-semibold text-[#12317B]">Why this first:</span>{" "}
               every other validation artifact — URS, FRS, IQ/OQ/PQ, traceability
               matrix, audit trail schema — references intended use. Starting
-              anywhere else creates rework. The golden dataset turns the
-              intended use into a measurable thing engineering can defend.
+              anywhere else creates rework. The golden dataset turns intended
+              use into a measurable target engineering can defend.
             </p>
           </div>
         </div>

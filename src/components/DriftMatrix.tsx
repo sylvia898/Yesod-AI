@@ -72,8 +72,8 @@ export function DriftMatrix() {
         />
         <p className="text-[14px] leading-[1.6] text-[#040404]">
           <span className="font-semibold text-[#12317B]">Conclusion:</span>{" "}
-          Upstream model changes should be treated like controlled software
-          changes when they can affect validated behavior.
+          Treat upstream model changes like controlled software changes when
+          they can affect validated behavior.
         </p>
       </div>
     </div>

@@ -8,7 +8,7 @@ export function Roadmap() {
         <SectionHeading
           eyebrow="Roadmap · How V1 grows into full qualification"
           title="Five phases, sequenced so velocity is never traded against credibility."
-          description="Each phase ships something a customer or auditor can verify, without halting product work. Phase 0–1 is the MVP scope. Phase 2 turns primitives into protocol-grade evidence. Phase 3–4 hardens the system once a sponsor or regulatory use case justifies the cost."
+          description="Each phase ships something a customer or auditor can verify without halting product work. Phase 0–1 is the MVP scope. Phase 2 turns primitives into protocol-grade evidence. Phase 3–4 hardens the system when a sponsor or regulatory use case justifies the cost."
         />
 
         <ol className="relative mt-12 space-y-6 border-l-2 border-[#2061AB] pl-8">

@@ -10,7 +10,7 @@ export function Scope() {
         <SectionHeading
           eyebrow="Tradeoffs & MVP scope"
           title="What V1 ships, what V1 omits, and the risks the team accepts to keep velocity."
-          description="The MVP goal is credibility, not completeness. The left column is what regulated buyers expect on day one. The right column is intentionally deferred — each item is a real cost we accept now in exchange for shipping speed. The callout below names the risks that deferral creates and how the architecture limits them."
+          description="The MVP goal is credibility, not completeness. The left column is what regulated buyers expect on day one. The right column is intentionally deferred — each item is a real cost accepted for shipping speed. The callout names the risks deferral creates and how the architecture limits them."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -34,8 +34,8 @@ export function Scope() {
             </p>
             <p className="mt-2 text-[14px] leading-[1.6] text-[#040404]">
               Yesod can be validation-ready and GxP-aligned before it is fully
-              validated. Full validation status belongs to executed, reviewed,
-              and signed protocols for a defined intended use.
+              validated. Full validation belongs to executed, reviewed, signed
+              protocols for a defined intended use.
             </p>
           </div>
           <div className="rounded-card border-l-4 border-[#2488D0] bg-white p-5 shadow-card">
@@ -46,7 +46,7 @@ export function Scope() {
               <li>
                 <span className="font-semibold text-[#12317B]">No signed VSR yet.</span>{" "}
                 Mitigated by shipping the traceability matrix and evidence
-                export so a sponsor-led VSR can be assembled within weeks.
+                export — a sponsor-led VSR can be assembled within weeks.
               </li>
               <li>
                 <span className="font-semibold text-[#12317B]">No full Part 11 e-signature module.</span>{" "}
@@ -55,8 +55,8 @@ export function Scope() {
               </li>
               <li>
                 <span className="font-semibold text-[#12317B]">No per-tenant validation environment.</span>{" "}
-                Mitigated by per-release evidence binder and golden-dataset
-                regression that any tenant can re-execute against.
+                Mitigated by a per-release evidence binder and golden-dataset
+                regression any tenant can re-execute.
               </li>
             </ul>
           </div>
