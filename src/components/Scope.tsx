@@ -8,7 +8,7 @@ export function Scope() {
     <section id="scope" className="bg-white">
       <div className="mx-auto max-w-[1200px] px-6 py-24">
         <SectionHeading
-          eyebrow="Tradeoffs & MVP scope"
+          eyebrow="Question 5 · MVP scope"
           title="What V1 ships, what V1 omits, and the risks the team accepts to keep velocity."
           description="The MVP goal is credibility, not completeness. The left column is what regulated buyers expect on day one. The right column is intentionally deferred — each item is a real cost accepted for shipping speed. The callout names the risks deferral creates and how the architecture limits them."
         />

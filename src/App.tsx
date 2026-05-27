@@ -11,7 +11,6 @@ import { Problem } from "./components/Problem";
 import { References } from "./components/References";
 import { Roadmap } from "./components/Roadmap";
 import { Scope } from "./components/Scope";
-import { ValidationPackage } from "./components/ValidationPackage";
 import { WhyYesod } from "./components/WhyYesod";
 import { Link, Router, useRoute } from "./router";
 
@@ -23,7 +22,6 @@ const ROUTES: Record<string, () => ReactElement> = {
   "/gxp": GxpWorkflow,
   "/llm-risk": LlmRisk,
   "/drift": Drift,
-  "/package": ValidationPackage,
   "/architecture": ArchitectureFlow,
   "/roadmap": Roadmap,
   "/scope": Scope,

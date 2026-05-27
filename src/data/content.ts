@@ -28,10 +28,9 @@ export const NAV_LINKS: NavLink[] = [
   { path: "/gxp", label: "GxP" },
   { path: "/llm-risk", label: "LLM" },
   { path: "/drift", label: "Drift" },
-  { path: "/package", label: "Package" },
   { path: "/architecture", label: "Architecture" },
+  { path: "/scope", label: "MVP Scope" },
   { path: "/roadmap", label: "Roadmap" },
-  { path: "/scope", label: "Scope" },
   { path: "/next-step", label: "Next Steps" },
   { path: "/references", label: "References" },
 ];
@@ -607,50 +606,6 @@ export const DRIFT_TRIGGER_MATRIX: DriftTrigger[] = [
     detection: "Golden suite score drops or output diff exceeds threshold",
     action: "Block release until reviewed; open corrective change",
     evidence: "Regression alert, investigation, approval or rollback record",
-  },
-];
-
-export type ValidationPackageGroup = {
-  title: string;
-  intent: string;
-  items: string[];
-};
-
-export const VALIDATION_PACKAGE_GROUPS: ValidationPackageGroup[] = [
-  {
-    title: "Build now",
-    intent: "GxP-aligned primitives that should exist in the MVP product surface.",
-    items: [
-      "Intended use statement",
-      "URS draft",
-      "Risk assessment",
-      "Prompt/model versioning",
-      "Append-only audit trail",
-      "Reviewer attestation",
-      "Golden dataset tests",
-      "Output traceability records",
-    ],
-  },
-  {
-    title: "Prepare now, execute later",
-    intent: "Structures that make formal qualification possible without a rebuild.",
-    items: [
-      "IQ/OQ/PQ protocol templates",
-      "Traceability matrix structure",
-      "Validation evidence export",
-      "Per-tenant validation environment scaffolding",
-      "Drift monitoring rules",
-    ],
-  },
-  {
-    title: "Defer until sponsor/regulatory trigger",
-    intent: "High-friction evidence activities that should be executed when the use case requires them.",
-    items: [
-      "Full signed IQ/OQ/PQ execution",
-      "Full Validation Summary Report",
-      "Customer-managed validation harness",
-      "Continuous validation dashboards",
-    ],
   },
 ];
 

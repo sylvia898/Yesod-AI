@@ -23,7 +23,7 @@ The proposed approach has three structural ideas:
 - **The Controlled Path** — a single request route from user input through identity, version pinning, human review, and an immutable evidence record.
 - **A second AI control plane** — pinned model deployments, versioned prompts, snapshotted retrieval indices, and drift triggers, on top of traditional Computer System Validation.
 
-The Minimum Viable Validation Package separates **build now**, **prepare now / execute later**, and **defer until sponsor or regulator triggers** so an MVP can credibly support regulated workflows without overclaiming a validated state.
+The MVP scope separates **must-have controls for V1** from **deferred items** that wait for a sponsor or regulatory trigger, and names the **risks accepted** alongside the architectural mitigations that limit them. The Roadmap then sequences delivery across five phases so each release ships something a customer or auditor can verify without halting product work or overclaiming a validated state.
 
 ## 3. Run Locally
 
