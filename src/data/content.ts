@@ -65,25 +65,25 @@ export const PROBLEM_CARDS: ProblemCard[] = [
     icon: Database,
     title: "Clinical outputs carry evidence obligations",
     body:
-      "SDTM and ADaM feed the Tables, Listings, and Figures that support clinical decisions. A reviewer must be able to reconstruct how any draft was produced.",
+      "SDTM and ADaM feed the Tables, Listings, and Figures behind clinical decisions. Reviewers must be able to reconstruct how any draft was produced.",
   },
   {
     icon: ClipboardCheck,
     title: "Computer System Validation starts with intended use",
     body:
-      "Validation is not a post-demo checklist. It begins with what the system is for, then proves it performs that use reliably.",
+      "Validation isn't a post-demo checklist. It starts with intended use, then proves the system performs it reliably.",
   },
   {
     icon: Sparkles,
     title: "LLMs change the evidence model",
     body:
-      "Probabilistic outputs, prompt edits, retrieval snapshots, and provider updates add versioned inputs that deterministic validation does not cover.",
+      "Probabilistic outputs, prompt edits, retrieval snapshots, and provider updates add versioned inputs deterministic validation doesn't cover.",
   },
   {
     icon: History,
     title: "Audit evidence is a product feature",
     body:
-      "Every regulated output needs a durable record: dataset, prompt, model, retrieval context, output hash, reviewer, decision, timestamp, requirement.",
+      "Every regulated output needs a durable record — dataset, prompt, model, retrieval, output hash, reviewer, decision, timestamp, requirement.",
   },
 ];
 
@@ -99,9 +99,9 @@ export const COMPLIANCE_LENSES: EvidenceLens[] = [
     icon: ShieldCheck,
     title: "Validation-ready ≠ fully validated",
     signal:
-      "Ship the primitives that make validation possible; let customers execute and sign the formal protocols.",
+      "Ship the primitives that make validation possible; customers execute and sign the formal protocols.",
     body:
-      "Use precise language — GxP-aligned, validation-ready, audit-defensible — and never claim a state that has not been executed.",
+      "Use precise language — GxP-aligned, validation-ready, audit-defensible — and never claim a state that hasn't been executed.",
   },
   {
     icon: GitBranch,
@@ -109,7 +109,7 @@ export const COMPLIANCE_LENSES: EvidenceLens[] = [
     signal:
       "An approved output should walk backward to review, AI output, test, requirement, and intended use.",
     body:
-      "This is a data model and workflow choice — not a documentation task saved for the end of the release.",
+      "It's a data-model and workflow choice — not a documentation task saved for the end of release.",
   },
   {
     icon: UserCheck,
@@ -117,7 +117,7 @@ export const COMPLIANCE_LENSES: EvidenceLens[] = [
     signal:
       "AI assistance must not silently become an approved deliverable.",
     body:
-      "Reviewer identity, decision, edits, rationale, and timestamp belong in the evidence record for every output.",
+      "Reviewer identity, decision, edits, rationale, and timestamp belong in every output's evidence record.",
   },
 ];
 
@@ -128,7 +128,7 @@ export const WHY_CARDS: WhyCard[] = [
     icon: ShieldCheck,
     title: "Enterprise trust",
     body:
-      "Pharma and CRO buyers need evidence the platform supports regulated workflows without producing untraceable outputs.",
+      "Pharma and CRO buyers need evidence the platform supports regulated workflows without untraceable outputs.",
   },
   {
     icon: LineChart,
@@ -140,13 +140,13 @@ export const WHY_CARDS: WhyCard[] = [
     icon: FileSignature,
     title: "Audit and procurement confidence",
     body:
-      "QA looks for intended use, requirements, qualification evidence, traceability, and change control before trusting an AI-generated deliverable.",
+      "QA looks for intended use, requirements, qualification evidence, traceability, and change control before trusting any AI deliverable.",
   },
   {
     icon: AlertTriangle,
     title: "AI-specific risk",
     body:
-      "Reproducibility, hallucination, model drift, and retrieval churn need controls visible in the product and in the evidence export.",
+      "Reproducibility, hallucination, drift, and retrieval churn need controls visible in the product and evidence export.",
   },
 ];
 
@@ -169,11 +169,11 @@ export const ADOPTION_GATES: AdoptionGate[] = [
   {
     stage: "Pilot inside a study",
     decider: "Clinical QA + clinical operations",
-    question: "Can we use these outputs in a real study without creating audit risk?",
+    question: "Can we use these outputs in a real study without audit risk?",
     required:
       "Intended use, URS, golden dataset, append-only audit log, reviewer attestation, evidence export.",
     blocker:
-      "Most AI tools stall here. Without validation-ready primitives, pilots stay sandboxed indefinitely.",
+      "Most stall here — without validation-ready primitives, pilots stay sandboxed.",
   },
   {
     stage: "Production for regulated outputs",
@@ -182,7 +182,7 @@ export const ADOPTION_GATES: AdoptionGate[] = [
     required:
       "Executed IQ/OQ/PQ, traceability matrix, signed Validation Summary Report, controlled change process.",
     blocker:
-      "Without designed-in traceability, IQ/OQ/PQ execution becomes a rebuild — not a documentation task.",
+      "Without designed-in traceability, IQ/OQ/PQ becomes a rebuild — not a documentation task.",
   },
   {
     stage: "Scale across studies & sponsors",
@@ -191,7 +191,7 @@ export const ADOPTION_GATES: AdoptionGate[] = [
     required:
       "Per-tenant validation environment, ongoing drift monitoring, customer-runnable golden cases.",
     blocker:
-      "Without a per-release evidence binder, every new sponsor restarts qualification from zero.",
+      "Without a per-release evidence binder, every sponsor restarts qualification from zero.",
   },
 ];
 
@@ -205,23 +205,23 @@ export const STABILITY_SCENARIOS: StabilityScenario[] = [
   {
     trigger: "Provider auto-upgrades the foundation model overnight.",
     without:
-      "Outputs shift silently. Prior runs cannot be reproduced. The qualified state has lapsed before anyone notices.",
+      "Outputs shift silently. Prior runs can't be reproduced. The qualified state lapses before anyone notices.",
     withControls:
-      "Pinned deployment IDs + provider-notice monitoring fire a drift trigger. Change record, golden re-run, and a documented re-validation decision follow.",
+      "Pinned deployment IDs and provider monitoring fire a drift trigger; change record, golden re-run, and documented re-validation decision follow.",
   },
   {
     trigger: "An engineer ships a 5-word prompt template edit.",
     without:
-      "Validated behavior changes without a visible software release marker. Reviewers cannot tell which version produced last week's draft.",
+      "Behavior changes without a visible release marker. Reviewers can't tell which version produced last week's draft.",
     withControls:
-      "Prompts versioned as controlled artifacts. Change review + prompt regression suite gate the merge. The change is traceable and reversible.",
+      "Prompts versioned as controlled artifacts; change review and regression suite gate the merge. Change is traceable and reversible.",
   },
   {
     trigger: "Upstream ADaM schema renames a variable.",
     without:
-      "Derivation logic silently breaks. TLF drafts look plausible but reference the wrong column. The error is found in audit, not in CI.",
+      "Derivation logic silently breaks. TLF drafts look plausible but reference the wrong column. The error surfaces in audit, not CI.",
     withControls:
-      "Schema contract validation at ingest blocks the run. An OQ delta test surfaces the impact and routes a controlled change.",
+      "Contract validation at ingest blocks the run; an OQ delta test surfaces impact and routes a controlled change.",
   },
 ];
 
@@ -234,22 +234,22 @@ export const COST_OF_INACTION: InactionCost[] = [
   {
     area: "Sales",
     consequence:
-      "Pilots stall at the QA gate with the verdict 'interesting tool, not validated.'",
+      "Pilots stall at the QA gate: 'interesting tool, not validated.'",
   },
   {
     area: "Adoption",
     consequence:
-      "Programmers cannot use AI output for regulatory deliverables — usage is capped at the sandbox.",
+      "Programmers can't use AI output for regulatory deliverables — usage stays capped at the sandbox.",
   },
   {
     area: "Audit",
     consequence:
-      "A single inspection finding tied to AI use can propagate across the sponsor's entire portfolio.",
+      "A single inspection finding tied to AI use can propagate across a sponsor's portfolio.",
   },
   {
     area: "Engineering",
     consequence:
-      "Retrofitting validation later means rebuilding the data model, not adding documents at the end.",
+      "Retrofitting validation means rebuilding the data model — not adding documents at the end.",
   },
 ];
 
@@ -267,11 +267,11 @@ export const IQ_OQ_PQ_ROWS: IqOqPqRow[] = [
     phase: "IQ",
     name: "Installation Qualification",
     intent:
-      "Prove the validated environment is installed and configured exactly as intended.",
+      "Prove the validated environment is installed and configured as intended.",
     traditional:
-      "Server build sheets, OS patches, installed component manifests, and controlled configuration records.",
+      "Server build sheets, OS patches, component manifests, controlled configuration records.",
     cloudAi:
-      "Infrastructure-as-code snapshot, container image digest, library versions, model deployment ID, prompt version, secrets/config baseline, and environment config diff.",
+      "Infrastructure-as-code snapshot, container image digest, library versions, model deployment ID, prompt version, secrets/config baseline, environment diff.",
     evidence:
       "Signed IQ checklist, IaC plan hash, image digest, dependency manifest, prompt/model manifest, environment diff, and release tag.",
   },
@@ -279,11 +279,11 @@ export const IQ_OQ_PQ_ROWS: IqOqPqRow[] = [
     phase: "OQ",
     name: "Operational Qualification",
     intent:
-      "Prove product functions operate according to specification under controlled test conditions.",
+      "Prove product functions operate to specification under controlled test conditions.",
     traditional:
-      "Scripted functional tests mapped to approved functional requirements.",
+      "Scripted functional tests mapped to approved requirements.",
     cloudAi:
-      "Functional tests, golden ADaM-like datasets, deterministic evaluation suite, RBAC tests, RAG/context checks, prompt regression tests, and audit-log verification.",
+      "Functional tests, golden ADaM datasets, deterministic eval suite, RBAC tests, RAG/context checks, prompt regression, audit-log verification.",
     evidence:
       "OQ protocol results, test execution logs, expected-vs-actual diffs, access test evidence, prompt regression report, and requirement coverage.",
   },
@@ -295,7 +295,7 @@ export const IQ_OQ_PQ_ROWS: IqOqPqRow[] = [
     traditional:
       "End-to-end scenario runs by trained users in the target operating environment.",
     cloudAi:
-      "SDTM/ADaM-like workflow scenarios, TLF draft generation, programmer-in-the-loop review, reviewer attestation, and complete audit trail capture.",
+      "SDTM/ADaM workflow scenarios, TLF draft generation, programmer-in-the-loop review, reviewer attestation, audit trail capture.",
     evidence:
       "PQ scenario packet, approved TLF draft, review attestation, output hash, run replay record, and signed scenario result.",
   },
@@ -318,7 +318,7 @@ export const GXP_PILLARS: GxpPillar[] = [
     icon: Repeat,
     title: "Reproducibility",
     body:
-      "A prior run can be replayed because inputs, versions, parameters, and outputs are retained.",
+      "Any prior run can be replayed — inputs, versions, parameters, and outputs are retained.",
   },
   {
     icon: UserCheck,

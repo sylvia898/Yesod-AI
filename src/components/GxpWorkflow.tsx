@@ -9,7 +9,7 @@ export function GxpWorkflow() {
         <SectionHeading
           eyebrow="Question 2 · GxP in clinical data workflows"
           title="Eight pillars that turn a clinical AI workflow into a regulated system."
-          description="GxP — primarily GCP for trial data and GLP for analytical work — expects documented intent, qualified behavior, attributable actions, and reconstructable outputs. For SDTM, ADaM, and TLF workflows, that translates into eight engineering capabilities. The traceability example below walks a single regulated output backward through every pillar."
+          description="GxP — primarily GCP for trial data, GLP for analytical work — expects documented intent, qualified behavior, attributable actions, and reconstructable outputs. For SDTM, ADaM, and TLF workflows, that translates into eight engineering capabilities. The example below walks a single output backward through every pillar."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {GXP_PILLARS.map(({ icon: Icon, title, body }) => (

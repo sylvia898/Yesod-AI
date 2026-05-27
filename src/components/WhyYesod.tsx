@@ -14,7 +14,7 @@ export function WhyYesod() {
         <SectionHeading
           eyebrow="Strategic importance"
           title="Why validation readiness dictates Yesod's adoption and system stability."
-          description="Two forces are at stake. Adoption: pharma, biotech, and CRO buyers will not promote a tool past sandbox without evidence that regulated outputs are reproducible and audit-defensible. Stability: without designed-in versioning, traceability, and drift control, every upstream model or prompt change silently invalidates the system's qualified state."
+          description="Two forces matter. Adoption: pharma, biotech, and CRO buyers won't promote a tool past sandbox without evidence regulated outputs are reproducible and audit-defensible. Stability: without designed-in versioning, traceability, and drift control, every upstream model or prompt change silently invalidates the qualified state."
         />
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
@@ -57,9 +57,9 @@ function AdoptionGatesSection() {
           Four gates between sandbox and production scale.
         </h3>
         <p className="mt-3 text-[15px] leading-[1.65] text-[#040404]">
-          A clinical AI tool moves through predictable checkpoints. Each one has
-          a decider, a question, and a hard requirement. Without designed-in
-          validation primitives, most tools never clear gate 2.
+          Clinical AI tools move through predictable checkpoints. Each has a
+          decider, a question, and a hard requirement. Without designed-in
+          validation primitives, most never clear gate 2.
         </p>
       </div>
 
@@ -120,10 +120,9 @@ function StabilitySection() {
           Three real triggers that invalidate qualification overnight.
         </h3>
         <p className="mt-3 text-[15px] leading-[1.65] text-[#040404]">
-          These are not edge cases. They happen on a normal week of LLM
-          development. The contrast shows what changes between a system that
-          degrades silently and one where the change becomes a documented
-          re-validation decision.
+          These aren't edge cases — they happen on a normal week of LLM
+          development. The contrast shows the difference between silent
+          degradation and a documented re-validation decision.
         </p>
       </div>
 
@@ -181,7 +180,7 @@ function InactionSection() {
               Cost of inaction
             </p>
             <h3 className="mt-1 text-[18px] font-semibold leading-tight text-[#12317B]">
-              What happens if Yesod does not design validation in from V1.
+              What happens if validation isn't designed in from V1.
             </h3>
           </div>
         </div>
