@@ -8,7 +8,7 @@ export function Drift() {
       <div className="mx-auto max-w-[1200px] px-6 py-24">
         <SectionHeading
           eyebrow="Question 4 · Model drift & upstream updates"
-          title="Yes — upstream model drift can invalidate validation. Treat it as a controlled change."
+          title="Upstream model drift can invalidate validation. Treat it as a controlled change."
           description="Foundation-model providers upgrade, deprecate, and silently re-tune models on their own schedule. Without controls, the validated state lapses the moment behavior shifts. The four controls below plus the trigger matrix turn drift into a documented re-validation decision — not a surprise audit finding."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

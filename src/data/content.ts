@@ -69,7 +69,7 @@ export const PROBLEM_CARDS: ProblemCard[] = [
   },
   {
     icon: ClipboardCheck,
-    title: "CSV starts with intended use",
+    title: "Computer System Validation starts with intended use",
     body:
       "Validation is not a post-demo checklist. It begins with what the system is for, then proves it performs that use reliably.",
   },
@@ -470,7 +470,7 @@ export const LLM_RISKS: LlmRisk[] = [
     risk: "Same input can produce materially different text or code.",
     why: "A reviewer cannot defend a result the platform cannot explain.",
     control:
-      "Low temperature, structured outputs, stable eval settings, and mandatory raw-output capture.",
+      "Pin decoding parameters (temperature, top-p, seed) and capture the raw response on every run.",
     evidence: "Run record, output hash, evaluation diff, reviewer decision.",
   },
   {
@@ -479,7 +479,7 @@ export const LLM_RISKS: LlmRisk[] = [
     risk: "A prompt edit changes behavior without a visible software release.",
     why: "Prompts are executable workflow logic for an AI system.",
     control:
-      "Version prompts as controlled artifacts; require review; run prompt regression tests.",
+      "Version prompts as controlled artifacts; gate every change on peer review and a golden regression suite.",
     evidence: "Prompt version manifest, change ticket, regression report.",
   },
   {
@@ -488,7 +488,7 @@ export const LLM_RISKS: LlmRisk[] = [
     risk: "Provider upgrades or deprecations shift behavior on the same workflow.",
     why: "Upstream behavior can change even if Yesod code does not.",
     control:
-      "Model gateway, pinned deployment IDs, provider-notice monitoring.",
+      "Pin explicit provider deployment IDs through a model gateway; no floating aliases.",
     evidence: "Model manifest, provider change log, re-validation decision.",
   },
   {
@@ -497,7 +497,7 @@ export const LLM_RISKS: LlmRisk[] = [
     risk: "Rechunking or refreshing a knowledge base changes retrieved context.",
     why: "The AI answer depends on retrieved evidence, not only the prompt.",
     control:
-      "Version retrieval indices; snapshot per release; rerun golden cases after corpus changes.",
+      "Immutable per-release retrieval snapshots; promote a new index only after golden cases re-run cleanly.",
     evidence: "Retrieval snapshot ID, index diff, golden-case result.",
   },
   {
@@ -506,7 +506,7 @@ export const LLM_RISKS: LlmRisk[] = [
     risk: "SDTM or ADaM schema changes break derivation assumptions.",
     why: "Clinical logic depends on variable definitions, terminology, and derivation rules.",
     control:
-      "Validate schema at ingest; maintain data contracts; require re-checks on schema bumps.",
+      "Enforce SDTM/ADaM data contracts at ingest; fail closed on schema drift until derivations are re-tested.",
     evidence: "Schema validation report, data contract version, gate result.",
   },
   {
@@ -515,7 +515,7 @@ export const LLM_RISKS: LlmRisk[] = [
     risk: "The model invents unsupported values, citations, or explanations.",
     why: "A plausible unsupported claim becomes a regulated data-integrity issue.",
     control:
-      "Ground claims in source data or retrieval; flag unsupported assertions; require human review.",
+      "Require traceable citations to source data; flag unsupported claims for mandatory human review.",
     evidence: "Source linkage, reviewer edits, exception report.",
   },
   {
@@ -524,7 +524,7 @@ export const LLM_RISKS: LlmRisk[] = [
     risk: "An AI draft is approved without accountable clinical-programmer review.",
     why: "Human attestation is the key control for AI-assisted regulated outputs.",
     control:
-      "Enforce review gates; capture reviewer identity, decision, edits, and rationale.",
+      "Hard review gate before export: no regulated output ships without an authenticated reviewer's decision and rationale.",
     evidence: "Reviewer attestation, edit diff, approval timestamp.",
   },
   {
@@ -533,7 +533,7 @@ export const LLM_RISKS: LlmRisk[] = [
     risk: "A past output cannot be reconstructed because context was not retained.",
     why: "Auditors may ask to replay the path from input to approved output months later.",
     control:
-      "Persist versions, parameters, inputs, retrieval snapshot, raw and reviewed outputs, and hash.",
+      "Persist the full run context (dataset, prompt, model ID, retrieval snapshot, raw output, hash) so any prior run can be replayed.",
     evidence: "Audit replay packet and evidence export.",
   },
 ];
@@ -925,7 +925,7 @@ export const REFERENCES: { category: string; items: ReferenceItem[] }[] = [
       },
       {
         title: "FDA — Computer Software Assurance for Production and Quality System Software",
-        note: "Final guidance reframing CSV as risk-based assurance; underpins the validation-ready posture.",
+        note: "Final guidance reframing Computer System Validation as risk-based assurance; underpins the validation-ready posture.",
         url: "https://www.fda.gov/media/188844/download",
       },
       {

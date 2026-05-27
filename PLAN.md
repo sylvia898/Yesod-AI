@@ -37,7 +37,7 @@ The website keeps separate routed sections so it can be presented like a slide s
 
 ## Content Decisions
 
-- Define CSV as Computer System Validation the first time it appears.
+- Spell out "Computer System Validation" in full; do not use the CSV acronym.
 - Do not claim the product is fully validated before protocols are executed and signed.
 - Show a concrete traceability chain from URS to approved output.
 - Ground the example in an ADaM-to-TLF clinical programming workflow.

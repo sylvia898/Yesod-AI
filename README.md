@@ -21,7 +21,7 @@ The proposed approach has three structural ideas:
 
 - **The Validation Stack** — six layers (intended use → risk → IQ/OQ/PQ → traceability → audit & review → change control) where each layer earns the next.
 - **The Controlled Path** — a single request route from user input through identity, version pinning, human review, and an immutable evidence record.
-- **A second AI control plane** — pinned model deployments, versioned prompts, snapshotted retrieval indices, and drift triggers, on top of traditional CSV.
+- **A second AI control plane** — pinned model deployments, versioned prompts, snapshotted retrieval indices, and drift triggers, on top of traditional Computer System Validation.
 
 The Minimum Viable Validation Package separates **build now**, **prepare now / execute later**, and **defer until sponsor or regulator triggers** so an MVP can credibly support regulated workflows without overclaiming a validated state.
 
